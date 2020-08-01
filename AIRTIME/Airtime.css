@@ -1,0 +1,266 @@
+body{
+    margin: 0px auto;
+    
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+hr{
+    margin-top: 20px;
+}
+
+
+.side-menu {
+    height: 80%;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    position: fixed;
+    float: right;
+    background-color: rgb(248, 247, 247);
+    overflow-Y: hidden;
+    padding-top: 10px;
+    opacity:0.9;
+    transition-duration: 0.1s;
+    
+}
+
+.side{
+    text-align: center;
+    
+}
+.close{
+    text-align: right;  
+}
+
+#close-menu{
+    background-color: rgb(253, 244, 244);
+    border: 0px;
+    margin-right: 10px;
+}
+
+.side-menu .btn-close{
+    top: 0;
+    font-size: 30px;    
+}
+
+.side-menu a{
+    padding: 10px 10px 10px 10px;
+    display: block;
+    font-size: 20px;
+}
+
+.right-nav a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.side a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+li{
+    list-style: none;   
+}
+
+.fa-bars{
+    color: rgb(156, 149, 149);
+    border: 1px solid rgb(136, 123, 123);
+    padding: 7px;
+    border-radius: 5px;
+    margin-right: 20px;    
+}
+
+
+#button{
+    padding: 5px 10px 5px 10px;
+    margin-right: 25px;
+    background-color: rgb(21, 198, 252);
+    color: white;
+    border: 0px;
+}
+
+#side-button{
+    padding: 5px 10px 5px 10px;
+    margin: 30px;
+    background-color: rgb(21, 198, 252);
+    color: white;
+    border: 0px;
+}
+img{
+    width: 50rem;
+}
+.body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color:white;
+
+}
+
+.left-content{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-stretch: extra-expanded ;
+}
+#get-started{
+    padding: 7px 15px 7px 15px;
+    background-color: rgb(21, 198, 252);
+    color: white;
+    border: 0px;
+}
+
+
+@media(min-width: 700px) {
+    #icon{
+        display: none;
+    }   
+}
+
+
+@media(max-width:700px) {
+    .nav-content{
+        display: none;
+    }
+    hr{
+        margin-top: 5px;
+    }
+    img{
+        width: 0rem;
+    }
+}
+
+@media(max-width:1100px) and (min-width:750px) {
+    img{
+        width: 20rem;
+    }     
+}
+
+
+
+
+
+/*********** MAIN MODAL STYLE******************/
+
+.modal{
+    display: none;
+    z-index: 1;
+    position: absolute;
+	width: 60%;
+	overflow: auto;
+	/*margin: 0 auto;*/
+	left: 20%;
+    top: 20%;
+    
+    transition-duration:  all 1.25s ease-in-out;
+    transform: scale(0.9);
+    
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0.05em;    
+}
+
+.form{
+    width: 50%;
+    margin: auto;
+    padding: 1em;
+   /* box-shadow: 0 0 5px 0 black;*/
+    background-color: rgb(185, 190, 190);
+
+    background-size: cover;
+    
+}
+
+@media(max-width:800px) {
+    .form{
+        width: 100%;
+    }
+}
+
+
+.modal{
+    width: 80%;
+    left: 10%;
+    top: 10%;
+}
+
+#login{
+    padding: 7px;
+    background-color:grey;
+    width: 100%;
+    font-size: 18px;
+    border: 0px;    
+}
+
+.input-container{
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.fa-eye{
+    padding:10px;
+    border-left: 0px;
+    min-width: 50px;
+    text-align: center;
+    border: 1px solid rgb(114, 114, 114);
+    border-left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: white;
+}
+
+.password-space{
+    padding: 10px;
+     width: 100%;
+     border: 1px solid rgb(114, 114, 114);
+     border-right: 0px;
+     outline: white;
+     
+     
+}
+
+
+
+.space {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid rgb(114, 114, 114);
+}
+
+.small{
+    text-align: center;
+    display: none;
+}
+
+.delete{
+    float: right;
+    font-size: 25px;
+    background-color: rgb(185, 190, 190);
+    border: 0px;
+}
+
+
+

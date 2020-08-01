@@ -1,0 +1,172 @@
+body{
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+hr{
+    margin-top: 20px;
+}
+
+
+.side-menu {
+    height: 80%;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    position: fixed;
+    float: right;
+    background-color: rgb(248, 247, 247);
+    overflow-Y: hidden;
+    padding-top: 10px;
+    opacity:0.9;
+    transition-duration: 0.1s;
+    
+}
+
+.side{
+    text-align: center;
+    
+}
+.close{
+    text-align: right;  
+}
+
+.side-menu .btn-close{
+    top: 0;
+    font-size: 30px;    
+}
+
+
+.side-menu a{
+    padding: 10px 10px 10px 10px;
+    display: block;
+    font-size: 20px;
+}
+
+
+
+a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+li{
+    list-style: none;   
+}
+
+.fa-bars{
+    color: rgb(156, 149, 149);
+    border: 1px solid rgb(136, 123, 123);
+    padding: 7px;
+    border-radius: 5px; 
+    margin-right: 20px;    
+}
+
+
+#button{
+    padding: 5px 10px 5px 10px;
+    margin-right: 25px;
+    background-color: rgb(91, 97, 99);
+    color:rgb(253, 253, 253);
+    border-radius: 4px;
+}
+
+#side-button{
+    padding: 5px 10px 5px 10px;
+    margin: 30px;
+    background-color: rgb(91, 97, 99);
+    color: rgb(253, 253, 253);
+    border-radius: 4px;
+}
+
+
+
+
+@media(min-width: 700px) {
+    #icon{
+        display: none;
+    }   
+}
+
+
+@media(max-width:700px) {
+    .nav-content{
+        display: none;
+    }
+    hr{
+        margin-top: 5px;
+    }
+}
+
+
+.content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+h1{
+    color: rgb(81, 81, 145);
+}
+
+img{
+    width: 15rem;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    img{
+        display: none;
+    }
+}
+
+#form{
+    margin: 20px;
+    padding: 5px;
+    width: 250px;
+    border-radius: 3px;
+    border: 1px solid  rgb(21, 198, 252);
+}
+#select{
+    width: 260px;
+    margin: 20px;
+    border-radius: 3px;
+    border: 1px solid  rgb(21, 198, 252);
+    padding: 5px;
+    background-color: rgb(172, 163, 163);
+}
+#Add-row{
+    margin: 15px;
+    padding:  10px;
+    color: rgb(21, 198, 252); 
+    background-color: white; 
+    border: 1px solid rgb(21, 198, 252); 
+    font-weight: bolder;
+    width: 35%;
+}
+#Add-intern{
+    margin: 20px;
+    padding:  10px; 
+    background-color: rgb(21, 198, 252); 
+    color: white; 
+    border: 0px;
+    width: 30%;
+}
+
