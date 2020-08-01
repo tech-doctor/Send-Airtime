@@ -1,0 +1,126 @@
+body{
+    margin-top: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+*{
+    box-sizing: border-box;
+    padding: 0.05em;    
+}
+
+.form{
+    width: 40%;
+    margin: auto;
+    /*margin-right: auto;*/
+    padding: 1em;
+    box-shadow: 0 0 20px 0 black;
+    background-color: white;
+    
+    background-size: cover;
+    
+}
+
+@media(max-width:800px){
+    .form{
+        width: 100%;
+        box-shadow: 0 0 0 0;
+
+    }
+
+}
+
+
+/*#toggle-password{
+    position: absolute;
+}*/
+
+.first {
+    text-align: center;
+}
+
+.space {
+     padding: 10px;
+     width: 100%;
+     border-radius: 4px;
+     border: 1px solid rgb(114, 114, 114);
+     outline: black;
+}
+
+.password-space{
+    padding: 10px;
+     width: 100%;
+     border: 1px solid rgb(114, 114, 114);
+     border-right: 0px;
+     outline: black;
+     border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/*.space:focus {
+    border: 1px solid black;
+
+}*/
+  
+.input-container{
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.fa-eye{
+    padding:10px;
+    border-left: 0px;
+    min-width: 50px;
+    text-align: center;
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 4px;
+    border-left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+
+
+
+  
+    
+
+ 
+.social{
+    padding: 5px;
+    background-color: white;
+    width: 70%;
+    font-size: 18px;
+    
+}
+
+#sign-up{
+    padding: 7px;
+    background-color: rgb(113, 201, 113) ;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+
+
+
+
+::placeholder{
+    font-size: 15px;
+
+}
+#facebook{
+    color: rgb(33, 33, 185);
+    border-color: rgb(75, 75, 216);
+
+}
+
+#google{
+    color: rgb(221, 73, 73);
+    border-color: rgb(216, 84, 75);
+}
+
+img{
+    margin-right: 10px;
+}
+

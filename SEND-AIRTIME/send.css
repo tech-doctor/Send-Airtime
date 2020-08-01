@@ -1,0 +1,230 @@
+body{
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+
+/*th{
+    background-color: blue;
+    
+}*/
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+hr{
+    margin-top: 20px;
+}
+
+
+.side-menu {
+    height: 80%;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    position: fixed;
+    float: right;
+    background-color: rgb(248, 247, 247);
+    overflow-Y: hidden;
+    padding-top: 10px;
+    opacity:0.9;
+    transition-duration: 0.1s;
+    
+}
+
+.side{
+    text-align: center;
+    
+}
+.close{
+    text-align: right;  
+}
+
+.side-menu .btn-close{
+    top: 0;
+    font-size: 30px;    
+}
+
+
+.side-menu a{
+    padding: 10px 10px 10px 10px;
+    display: block;
+    font-size: 20px;
+}
+
+
+
+a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+li{
+    list-style: none;   
+}
+
+.fa-bars{
+    color: rgb(156, 149, 149);
+    border: 1px solid rgb(136, 123, 123);
+    padding: 7px;
+    border-radius: 5px; 
+    margin-right: 20px;      
+}
+
+
+#button{
+    padding: 5px 10px 5px 10px;
+    margin-right: 25px;
+    background-color: rgb(91, 97, 99);
+    color:rgb(253, 253, 253);
+    border-radius: 4px;
+}
+
+#side-button{
+    padding: 5px 10px 5px 10px;
+    margin: 30px;
+    background-color: rgb(91, 97, 99);
+    color: rgb(253, 253, 253);
+    border-radius: 4px;
+}
+
+.fa-trash{
+    color: rgb(90, 89, 88);
+}
+
+
+@media(min-width: 700px) {
+    #icon{
+        display: none;
+    }   
+}
+
+
+@media(max-width:700px) {
+    .nav-content{
+        display: none;
+    }
+    hr{
+        margin-top: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.basic-info{
+    display: flex;
+    align-items: center;
+}
+
+#track{
+    font-size: 12px;
+    
+}
+
+#name{
+    font-size: 15px;
+}
+
+.table{
+    padding: 20px;
+    text-align: center;  
+    
+}
+
+#t01 th{
+    background-color: rgb(1, 179, 233);
+    color: white;
+}
+
+#t01 tr:nth-child(even) {
+    background-color: rgb(211, 209, 209);
+    border-top: 1px solid rgb(150, 141, 141);
+    border-bottom: 1px solid rgb(150, 141, 141);
+    border-radius: 15px;
+}
+
+#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+#send{
+    background-color:  rgb(2, 165, 214);
+    color: white;
+    padding: 6px 15px;
+    border: 0px;
+    
+}
+
+
+table, th, td{
+    
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 15px;
+    text-align: center;
+}
+
+.content{
+    margin: 30px;
+}
+
+#input-amount{
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid rgb(21, 198, 252);;
+}
+
+h1{
+    color: rgb(75, 75, 141);
+    padding: 20px;
+}
+
+.button{
+    text-align: center;
+}
+
+
+@media(max-width:700px){
+    .content{
+        margin: 5;
+    }
+    .table{
+        padding: 5px;
+        overflow-x: scroll;  
+    }
+    #input-amount{
+        width: 40px;
+    }
+}

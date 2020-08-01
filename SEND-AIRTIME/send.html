@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">
+    <title>SEND AIRTIME</title>
+    <link rel="stylesheet" href="Send.css">
+</head>
+<body>
+
+    <nav>
+        <div class="navigation">
+            <div class="left-nav">
+               
+            </div>
+            <div class="right-nav">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="nav-content">Home</a>
+                        <a href="../ADD-NEW/Add.html" class="nav-content">Add Customers</a>
+                        <a href="../TRANSACTION/Transaction.html" class="nav-content">Trasactions</a>
+                        <button  type="submit" class="nav-content" id="button">LOG OUT</button>
+                        <i class="fa fa-bars" id="icon"></i>
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+        <div class="side-menu">
+            <div class="close">
+            <a href="#" id="close-menu"class="btn-close">&times;</a>
+        </div>
+            <div class="side">
+            <a href="../index.html" class="side-content">Home</a>
+            <hr>
+            <a href="../ADD-NEW/Add.html" class="side-content">Add Customers</a>
+            <hr>
+            <a href="../TRANSACTION/Transaction.html" class="side-content">Trasactions</a>
+            <hr>
+            <button  type="submit" class="side-content" id="side-button">LOG OUT</button>
+        </div>
+        </div>
+        <hr>
+
+
+
+
+
+
+    <div class="content">
+     <div class="header">
+       <h1>Send Airtime To Customers</h1> 
+     </div>
+
+     <div class="table">
+         <table cellspacing="35px" style="width:100%" id="t01">
+             <!--<div class="table-head">-->
+             <thead>
+                <th>S/N</th>
+                <th id="basic-info">BASIC INFO</th>
+                <th>PHONE NUMBER</th>
+                <th>NETWORK</th>
+                <th>AMOUNT</th>
+                <th>DELETE</th>
+             </thead>
+           <!-- </div>-->
+            <tbody>
+             <tr>
+                 <td>1</td>
+                 <td id="basic-info">
+                     <div class="basic-info">
+                         <div class="icon">
+                     <i class="fa fa-user-circle fa-2x"></i>
+                    </div>
+                    <div class="name-track">
+                        <p id="name">Oluka Isaac</p>
+                        <p id="track">Front-End</p>
+                    </div>
+                    </div>
+                 </td>
+
+                 <td>+2348129366772</td>
+                 <td>MTN</td>
+                 <td>
+                     <input type="number" id="input-amount" required>
+
+                 </td>
+                 <td>
+                     <i class="fa fa-trash"></i>
+                 </td>
+             </tr>
+             
+                
+
+
+
+                 <tr>
+                    <td>2</td>
+                    <td id="basic-info">
+                        <div class="basic-info">
+                            <div class="icon">
+                        <i class="fa fa-user-circle fa-2x"></i>
+                       </div>
+                       <div class="name-track">
+                           <p id="name">Damilola Oluseyi</p>
+                           <p id="track">Dev-Ops</p>
+                       </div>
+                       </div>
+                    </td>
+   
+                    <td>+2348129366772</td>
+                    <td>AIRTEL</td>
+                    <td>
+                        <input type="number" id="input-amount" required>
+   
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+                    
+                 </tr>
+                 
+
+                 <tr>
+                    <td>3</td>
+                    <td id="basic-info">
+                        <div class="basic-info">
+                            <div class="icon">
+                        <i class="fa fa-user-circle fa-2x"></i>
+                       </div>
+                       <div class="name-track">
+                           <p id="name">Mobayode Dammy</p>
+                           <p id="track">Back-End</p>
+                       </div>
+                       </div>
+                    </td>
+   
+                    <td>+2348129366772</td>
+                    <td>Glo</td>
+                    <td>
+                        <input type="number" id="input-amount" required>
+   
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+   
+                 </tr>
+                 
+                 
+
+             
+            </tbody>
+           
+
+             
+
+         </table>
+        </div>
+        <div class="button">
+         <button type="button" id="send" style="margin-top:80px" >Send Airtime</button>
+        </div>
+     
+    </div>
+
+    
+    <script src="Send.js"></script>
+</body>
+</html>
