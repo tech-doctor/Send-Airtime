@@ -1,126 +1,149 @@
 body{
-    margin-top: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0px auto;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 *{
-    box-sizing: border-box;
-    padding: 0.05em;    
+  box-sizing: border-box;
+  padding: 0.05em;    
 }
 
+/* ///////////////////////////////NAV//////////////////// */
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px 0px  rgb(158, 155, 155);
+  padding: 0em 1em;
+  background-color: white;
+}
+/* /////////////////////////////////////////// */
+
+
 .form{
-    width: 40%;
-    margin: auto;
-    /*margin-right: auto;*/
-    padding: 1em;
-    box-shadow: 0 0 20px 0 black;
-    background-color: white;
-    
-    background-size: cover;
-    
+  width: 40%;
+  margin: auto;
+  padding: 1em;
+  box-shadow: 0 0 3px 0 black;
+  background-color: white;
+  background-size: cover; 
+   margin-top: 30px;  
 }
 
 @media(max-width:800px){
-    .form{
-        width: 100%;
-        box-shadow: 0 0 0 0;
+  .form{
+    width: 100%;
+    box-shadow: 0 0 0 0;
+  }
+}
 
-    }
-
+@media(min-width:850px) and (max-width: 1200px){
+  .form{
+    width: 80%;
+  }
 }
 
 
-/*#toggle-password{
-    position: absolute;
-}*/
 
 .first {
-    text-align: center;
+  text-align: center;
 }
 
 .space {
-     padding: 10px;
-     width: 100%;
-     border-radius: 4px;
-     border: 1px solid rgb(114, 114, 114);
-     outline: black;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgb(114, 114, 114);
+  outline: black;
 }
 
-.password-space{
-    padding: 10px;
-     width: 100%;
-     border: 1px solid rgb(114, 114, 114);
-     border-right: 0px;
-     outline: black;
-     border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
+/* .password-space{
+  padding: 10px;
+  width: 100%;
+  border: 1px solid rgb(114, 114, 114);
+  border-radius: 4px;
+  outline: black;
+} */
 
-/*.space:focus {
-    border: 1px solid black;
 
-}*/
-  
 .input-container{
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
 }
+
 .fa-eye{
-    padding:10px;
-    border-left: 0px;
-    min-width: 50px;
-    text-align: center;
-    border: 1px solid rgb(114, 114, 114);
-    border-radius: 4px;
-    border-left: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+  padding:10px;
+  min-width: 50px;
+  text-align: center;
+  position: absolute;
+  left: 92%;
+  cursor: pointer;
 }
 
+  @media(max-width:500px){
+    .fa-eye{
+      left: 85%;
+    }
+  }
 
+  @media(max-width:300px){
+    .fa-eye{
+      left: 80%;
+    }
+  }
 
-
-
-  
-    
-
- 
+.connect{
+  font-size: 20px;
+}
 .social{
-    padding: 5px;
-    background-color: white;
-    width: 70%;
-    font-size: 18px;
-    
+  padding: 7px;
+  background-color: white;
+   width: 40%;
+  font-size: 18px;  
+  cursor: pointer; 
 }
 
 #sign-up{
-    padding: 7px;
-    background-color: rgb(113, 201, 113) ;
-    width: 100%;
-    font-size: 20px;
-    border-radius: 10px;
-    
+  padding: 7px;
+  color: white;
+  background-color: rgb(95, 89, 89) ;
+  /* background-color: rgb(81, 156, 81) ; */
+  cursor: not-allowed;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;  
+  opacity: 0.7;  
 }
 
-
-
+.opacity {
+  opacity: 1;
+}
 
 ::placeholder{
     font-size: 15px;
 
 }
-#facebook{
-    color: rgb(33, 33, 185);
-    border-color: rgb(75, 75, 216);
 
+.Third-party-auth{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+}
+#facebook{
+    color: white;
+    border: none;
+    background-color: rgb(75, 75, 216);
 }
 
 #google{
-    color: rgb(221, 73, 73);
     border-color: rgb(216, 84, 75);
+    border: none;
+    background-color: rgb(221, 73, 73);
+    color: white;
 }
 
-img{
-    margin-right: 10px;
+#check{
+  cursor: pointer;
 }
 

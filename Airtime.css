@@ -1,23 +1,66 @@
 body{
-    margin: 0px auto;
-    
+    margin: 0px auto;   
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .navigation{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+.left-nav{
+    font-family: cursive;
+    font-size: 18px;
+    color: rgb(60, 139, 139);
+}
 .right-nav{
     display: flex;
     justify-content: space-around;
-
 }
 
-hr{
-    margin-top: 20px;
+.right-nav a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
+#signup-button{
+    padding: 7px;
+    margin-right: 25px;
+    background-color: rgb(60, 139, 139);
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: white;
+}
+
+#logout-button{
+    padding: 7px;
+    margin-right: 25px;
+    background-color: rgb(85, 84, 84);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+#login-button{
+    padding: 7px;
+    margin-right: 25px;
+    background-color:  rgb(137, 173, 173);
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+
+}
 
 .side-menu {
     height: 80%;
@@ -31,50 +74,48 @@ hr{
     overflow-Y: hidden;
     padding-top: 10px;
     opacity:1;
-    transition-duration: 0.1s;
-    
+    transition-duration: 0.1s;    
 }
 
 .side{
     text-align: center;
     
 }
-.close{
-    text-align: right;  
+
+.side-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.side-heading{
+    font-family: cursive;
+    font-size: 18px;
+    color: rgb(60, 139, 139);
 }
 
 #close-menu{
-    background-color: rgb(253, 244, 244);
+    background-color: rgb(248, 247, 247);
     border: 0px;
     margin-right: 10px;
 }
 
+
 .side-menu .btn-close{
-    top: 0;
-    font-size: 30px;    
+    /* top: 0; */
+    font-size: 30px; 
+    outline: none; 
+    cursor: pointer;  
 }
 
 .side-menu a{
     padding: 10px 10px 10px 10px;
-    display: block;
     font-size: 20px;
-    font-weight: bolder;
-}
-
-.right-nav a{
-    text-decoration: none;
-    margin: 20px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 .side a{
     text-decoration: none;
-    margin: 20px;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
 }
 
 
@@ -83,38 +124,23 @@ li{
 }
 
 .fa-bars{
-    color: rgb(156, 149, 149);
-    border: 1px solid rgb(136, 123, 123);
-    padding: 7px;
+    color: rgb(105, 105, 105);
+    border: 2px solid rgb(95, 95, 95);
+    padding: 5px;
     border-radius: 5px;
-    margin-right: 20px;    
+    margin-right: 20px;   
+    font-size: 20px; 
 }
 
-
-#button{
-    padding: 5px 10px 5px 10px;
-    margin-right: 25px;
-    background-color: rgb(21, 198, 252);
-    color: white;
-    border: 0px;
-}
-
-#side-button{
-    padding: 5px 10px 5px 10px;
-    margin: 30px;
-    background-color: rgb(21, 198, 252);
-    color: white;
-    border: 0px;
-}
 img{
     width: 50rem;
 }
-.body{
+.div-one{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color:white;
+    background-color: rgb(230, 224, 224);
 
 }
 
@@ -125,12 +151,18 @@ img{
     font-stretch: extra-expanded ;
 }
 #get-started{
-    padding: 7px 15px 7px 15px;
-    background-color: rgb(21, 198, 252);
+    padding: 10px 15px 7px 10px;
+    background-color: rgb(60, 139, 139);
     color: white;
+    border-radius: 6px;
+    cursor: pointer;
     border: 0px;
 }
 
+
+/* .logged-in{
+    display: none;
+} */
 
 @media(min-width: 700px) {
     #icon{
@@ -143,9 +175,7 @@ img{
     .nav-content{
         display: none;
     }
-    hr{
-        margin-top: 5px;
-    }
+    
     img{
         width: 0rem;
     }
@@ -162,20 +192,36 @@ img{
 
 
 /*********** MAIN MODAL STYLE******************/
-
+.overlay{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0.7;
+    display: none;
+    z-index: 1;
+}
 .modal{
     display: none;
     z-index: 1;
     position: absolute;
-	width: 60%;
 	overflow: auto;
-	/*margin: 0 auto;*/
-	left: 20%;
-    top: 20%;
-    
-    transition-duration:  all 1.25s ease-in-out;
-    transform: scale(0.9);
-    
+    width: 80%;
+    left: 10%;
+    top: 10%;
+    animation: popup;
+    animation-duration: 0.6s;  
+}
+
+@keyframes popup{
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+   
 }
 
 *{
@@ -187,10 +233,9 @@ img{
     width: 50%;
     margin: auto;
     padding: 1em;
-   /* box-shadow: 0 0 5px 0 black;*/
-    background-color: rgb(185, 190, 190);
-
-    background-size: cover;
+    box-shadow: 0 0 5px 0  rgb(24, 24, 24);
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
     
 }
 
@@ -200,12 +245,6 @@ img{
     }
 }
 
-
-.modal{
-    width: 80%;
-    left: 10%;
-    top: 10%;
-}
 
 #login{
     padding: 7px;
@@ -226,29 +265,26 @@ img{
     border-left: 0px;
     min-width: 50px;
     text-align: center;
-    border: 1px solid rgb(114, 114, 114);
+    border: 1px solid rgb(133, 131, 131);
     border-left: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
     background-color: white;
+    cursor: pointer ;
 }
 
 .password-space{
     padding: 10px;
      width: 100%;
-     border: 1px solid rgb(114, 114, 114);
+     border: 1px solid rgb(133, 131, 131);
      border-right: 0px;
-     outline: white;
-     
-     
+     outline: none;     
 }
-
 
 
 .space {
     padding: 10px;
     width: 100%;
-    border: 1px solid rgb(114, 114, 114);
+    border: 1px solid rgb(133, 131, 131);
+    outline:none
 }
 
 .small{
@@ -263,5 +299,40 @@ img{
     border: 0px;
 }
 
+/* ///////////////////////////////////////////////////////////////////FOOTER////////////////////////////////////////////////////////////////////////// */
+.footer-1{
+    display: flex;
+    justify-content: space-around;
+    background-color:rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    padding: 3em 0em;
+}
 
+.footer-1 p{
+    font-size: 18px;
+    text-decoration: underline;
+    text-align: center;
+}
+.footer-1 a {
+    text-decoration: none;
+    color: rgb(214, 214, 214);    
+}
 
+.footer-1 a:hover {
+    color: rgb(255, 255, 255);    
+}
+.footer-1 li{
+    padding-top: 1em;
+}
+
+.footer-2{
+    background-color: rgb(82, 79, 79);
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
+}
+.footer-2 a{
+    text-decoration: none;
+    color: rgb(175, 175, 248);
+}

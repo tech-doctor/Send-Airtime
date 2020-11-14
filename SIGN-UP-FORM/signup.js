@@ -1,51 +1,62 @@
-const passwordInput = document.getElementById('password-input');
-const confirmPassword = document.getElementById('confirm-input');
+// const passwordInput = document.getElementById('password-input');
+// const confirmPassword = document.getElementById('confirm-input');
+const passwordInput = document.querySelectorAll('#password-input')
 const errorMessage = document.getElementById('error-message');
 const Button = document.getElementById("sign-up");
 const checkBox = document.getElementById('check');
-const togglePassword = document.querySelector("#toggle-password")
+const togglePassword = document.querySelectorAll("#toggle-password")
 const faEye = document.querySelector(".fa-eye");
 
-togglePassword.addEventListener('click', function(e) {
-    const type = passwordInput.getAttribute('type') ==='password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    this.classList.toggle('fa-eye-slash');
+
+function Callback() {
+    passwordInput.forEach(passwordResult => {
+    const type = passwordResult.getAttribute('type') ==='password' ? 'text' : 'password';
+    passwordResult.setAttribute('type', type);
+    return passwordResult
+    
+})  
+this.classList.toggle('fa-eye-slash');
+
+}
+
+
+
+togglePassword.forEach(toggle => {
+toggle.addEventListener('click', Callback)
 })
-
-
-passwordInput.addEventListener('input', ($event) => {
-    if ($event.target.value.length >= 6 && $event.target.value.length <= 12) {
-        
-    }
-    else{
-        
-    }
-})
-
 
 
 checkBox.onchange =  function()  {
     Button.disabled = !this.checked;
+    if (!Button.disabled){
+        Button.style.cursor = 'pointer'
+    } else{
+        Button.style.cursor = 'not-allowed'
+    }
+ 
 };
 
 
-Button.addEventListener('click', () => {
-    if (passwordInput.value === confirmPassword.value) {
-        passwordInput.style.border = 'thin solid green';
-        faEye.style.border = 'thin solid green';
-        confirmPassword.style.border = 'thin solid green';
+function errorSubmit(e)  {
+    e.preventDefault();
+    if (passwordInput[0].value === passwordInput[1].value) {
+        passwordInput[0].style.border = 'thin solid green';
+        passwordInput[1].style.border = 'thin solid green';
+        // passwordResult.style.border = 'thin solid green';
         errorMessage.style.display = 'none';
     }
     else {
-        passwordInput.style.border = 'thin solid red';
-        faEye.style.border = ' thin solid red'
-        confirmPassword.style.border = 'thin solid red';
+        passwordInput[0].style.border = 'thin solid red';
+        passwordInput[1].style.border = 'thin solid red';
         errorMessage.style.display = 'inline';
         errorMessage.style.color = 'red';
         errorMessage.style.position ='center';
-        
-        
     }
-});
+    
+}
+
+
+
+Button.addEventListener('click', errorSubmit);
 
 

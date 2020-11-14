@@ -1,102 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Airtime.css">
-    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">
-    <title>SEND AIRTIME</title>
-</head>
-<body>
-    <div class="page">
-    <nav>
-        
-        <div class="navigation">
-            <div class="left-nav">
-               
-            </div>
-            <div class="right-nav">
-                <ul>
-                    <li>
-                        <a href="index.html" class="nav-content">Home</a>
-                        <a href="ADD-NEW/Add.html" class="nav-content">Add Customers</a>
-                        <a href="TRANSACTION/Transaction.html" class="nav-content">Trasactions</a>
-                        <button type="submit" class="nav-content" id="button" 
-                         data-toggle="modal" data-target="#MyModal" data-backdrop="static">LOG IN</button>
-
-                 <!-----------------------------------------OTHER CONTENT----------------------------------------------->
-                        <i class="fa fa-bars" id="icon"></i>
-                    </li>
-                </ul>
-                
-            </div>
-
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="Airtime.css">
+		<link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">
+		<title>SEND AIRTIME</title>
+	</head>
+	<body>
+		<!-- <div class="page"> -->
+			<nav>
+				<div class="navigation">
+					<div class="left-nav">
+						<h1>Disburse.</h1>
+					</div>
+					<div class="right-nav">
+						<ul>
+							<li>
+								<a href="index.html" class="nav-content logged-out">Home</a>
+								<a href="ADD-NEW/Add.html" class="nav-content logged-in">Add Customers</a>
+								<a href="TRANSACTION/Transaction.html" class="nav-content logged-in">Trasactions</a>
+								<button type="submit" class="nav-content  logged-out" id="login-button" 
+									data-toggle="modal" data-target="#MyModal" data-backdrop="static">LOG IN</button>
+								<button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class="nav-content logged-out">SIGN UP</button>
+								<button type="submit" id="logout-button"  class="nav-content logged-in">LOG OUT</button>
+		
+						<!-----------------------------------------OTHER CONTENT----------------------------------------------->
+								<i class="fa fa-bars " id="icon"></i>
+							</li>
+						</ul>       
+					</div>
         </div>
-        <div class="side-menu">
+        
+				<div class="side-menu">
+          <div class="side-top">
+            <div class="side-heading">
+              <h2>Disburse.</h2>
+            </div>
             <div class="close">
-            <button id="close-menu"class="btn-close">&times;</button>
-        </div>
-            <div class="side">
-            <a href="index.html" class="side-content">Home</a>
-            <hr>
-            <a href="ADD-NEW/Add.html" class="side-content">Add Customers</a>
-            <hr>
-            <a href="TRANSACTION/Transaction.html" class="side-content">Trasactions</a>
-            <hr>
-            <button  type="submit" class="side-content" id="side-button">LOG IN</button>
-        </div>
-        </div>
-        <hr>
-        
-        <div class="body">
-            
-            <div class="left-content">
-                <p>Send Airtime to<br> a Larger Audience with<br> a More Faster,Reliable<br>Airtime service
-                </p>
-                <button type="submit" id="get-started">Get Started</button>
+              <button id="close-menu"class="btn-close">&times;</button>
             </div>
-            <div class="right-content">
-                <img class="image" src="Img/Celebration.png">
-            </div>
-        </div>
-    </nav>
-</div>
+          </div>
+					<div class="side">
+            <p>
+            <a href="index.html" class="side-content logged-out">Home</a> 
+          </p>
+            <p>
+            <a href="ADD-NEW/Add.html" class="side-content logged-in">Add Customers</a>  
+          </p>
+          <p>
+            <a href="TRANSACTION/Transaction.html" class="side-content  logged-in">Trasactions</a>   	
+          </p> 
+            <button  type="submit" class="side-content logged-out" id="login-button">LOG IN</button>
+            <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class=" logged-out">SIGN UP</button>
+            <button type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
+					</div>	
+				</div>
+			</nav>
+			<div class="body">
+				<div class=" div-one">
+					<div class="left-content">
+						<p>Send Airtime to<br> a Larger Audience with<br> a More Faster,Reliable<br>Airtime service</p>
+							<button type="submit" id="get-started">Get Started</button>
+					</div>
+					<div class="right-content">
+						<img class="image" src="">
+					</div>
+				</div>   
+			</div>
+			<div class="footer">
+				<footer>
+					<div class="footer-1">
+                       <div class="section-a">
+						 <p>Products</p>
+						 <li><a href="#">Airtime service</a></li>
+					   </div>
+					   <div class="section-b">
+						<p>Legal</p>
+						<li><a href="#">Terms and Condition</a></li>
+						<li><a href="#">Private policy</a></li>
+						<li><a href="#">Code of Conduct</a></li>
+					   </div>
+					   <div class="section-c">
+						<p>Find Us</p>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Slack</a></li>
+					   </div>
+					</div>
+					<div class="footer-2">
+					  <span>All reserved  ©2020</span><br>
+					  <span>Developed by <a href="#">Tech-Doctor</a></span>
+					</div>
+				</footer>
+			</div>
+		<!-- </div> -->
+    
 
-
-<!-------------------------- MAIN MODAL CONTENT------------------------------------->
-<div class="modal" id="exampleModal"   role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" id= "content-modal">
-          
-
-
-<div class="form">
-    <button class="delete">&times</button>
-<h2>Login</h2>
-<form action="">
-   <p>
-       <label>Email</label>
-       <div class="">
-       <input class="space" id="user" type="email" name="email" placeholder="Enter your email..." required>
-    </div>
-    </p>
-        <p>    
-       <label>Password</label>
-       <div class="input-container">
-        <input class="password-space" id="pin" type="password" name="password" placeholder="Enter your password..." required><br>
-        <i class="fa fa-eye" id="toggle-password"></i>
-    </div>
-    </p>
-        <a href="#">Forgot Password?</a>
-     <p>
-         <button id="login" type="submit">Login</button>
-     </p>
-     <p>You do not have an account yet? create <a href="SIGN-UP-FORM/signup.html" title="sign up here">Here</a></p>
-   </form> 
-   </div>
-</div>
-</div>
-</div>
-    <script src="Airtime.js"></script>
-</body>
+	<!-------------------------- MAIN MODAL CONTENT------------------------------------->
+	<div class="overlay">
+	</div>
+	<div class="modal" id="exampleModal"   role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" id= "content-modal">
+					<div class="form">
+						<!-- <button class="delete">&times</button> -->
+						<h2>Login</h2>
+						<form action="">
+							<p>
+								<label>Email</label>
+								<div class="">
+									<input class="space" id="user" type="email" name="email" placeholder="Enter your email..." required>
+								</div>
+							</p>
+							<p>    
+								<label>Password</label>
+								<div class="input-container">
+									<input class="password-space" id="pin" type="password" name="password" placeholder="Enter your password..." required><br>
+									<i class="fa fa-eye" id="toggle-password"></i>
+								</div>
+							</p>
+							<a href="#">Forgot Password?</a>
+							<p>
+							<button id="login" type="submit">Login</button>
+							</p>
+							<p>You do not have an account yet? create <a href="SIGN-UP-FORM/signup.html" title="sign up here">Here</a></p>
+						</form> 
+					</div>
+				</div>
+			</div>
+		</div>
+			<script src="Airtime.js"></script>
+	</body>
 </html>

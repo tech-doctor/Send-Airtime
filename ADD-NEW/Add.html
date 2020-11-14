@@ -13,50 +13,54 @@
     <nav>
         <div class="navigation">
             <div class="left-nav">
-               
+                <i class="fa fa-bars" id="bars-icon"></i>
             </div>
             <div class="right-nav">
                 <ul>
                     <li>
-                        <a href="../index.html" class="nav-content">Home</a>
+                        <!-- <a href="../index.html" class="nav-content">Home</a>
                         <a href="../ADD-NEW/Add.html" class="nav-content">Add Customers</a>
-                        <a href="../TRANSACTION/Transaction.html" class="nav-content">Trasactions</a>
+                        <a href="../TRANSACTION/Transaction.html" class="nav-content">Trasactions</a> -->
+                        <i class="far fa-user"></i>
                         <button  type="submit" class="nav-content" id="button">LOG OUT</button>
-                        <i class="fa fa-bars" id="icon"></i>
                     </li>
                 </ul>
                 
             </div>
 
         </div>
-        <div class="side-menu">
-            <div class="close">
-            <a href="#" id="close-menu"class="btn-close">&times;</a>
-        </div>
-            <div class="side">
-            <a href="../index.html" class="side-content">Home</a>
-            <hr>
-            <a href="../ADD-NEW/Add.html" class="side-content">Add Customers</a>
-            <hr>
-            <a href="../TRANSACTION/Transaction.html" class="side-content">Trasactions</a>
-            <hr>
-            <button  type="submit" class="side-content" id="side-button">LOG OUT</button>
-        </div>
-        </div>
-        <hr>
 
      <div class="content">
+         <div class="fixed-sidebar">
+           <h1>Disburse.</h1>
+        <div class="sidebar-content">
+           <p class="sidebar name"><i class="fas fa-user"></i>NAME</p>
+           <p class="sidebar home">HOME</p>
+           <p class="sidebar  wallet">WALLET</p>
+           <p class="sidebar wallet">CONTACT US</p>
+         </div> 
+        </div>
+
+        <div class="fixed-sidebar mobile-sidebar">
+            <h1>Disburse.</h1>
+         <div class=" sidebar-content">
+            <p class="sidebar name"><i class="fas fa-user"></i>NAME</p>
+            <p class="sidebar home">HOME</p>
+            <p class="sidebar  wallet">WALLET</p>
+            <p class="sidebar wallet">CONTACT US</p>
+          </div> 
+         </div>
          <div class="Add-new">
              <h1>Add  New Customer</h1>
              <p>Fill all the input fields, else entry will not be added </p>
-             <form action="">
-                 <input id="form" type="text" name="name"  placeholder="Full Name">
+             <form action="/SEND-AIRTIME/send.html" method="GET">
+                 <input class="form" id="name" type="text" name="name"  placeholder="Full Name">
                  <br>
-                 <input id="form" type="text" name="track"  placeholder="Track">
+                 <input class="form" type="text" name="track"  placeholder="Track">
                  <br>
-                 <input id="form" type="number" name="mobile" placeholder="Mobile Number">
+                 <input class="form" type="number" name="mobile" placeholder="Mobile Number">
                  <br>
-                 <select id="select" name="network">
+                 <select class="select" name="network">
                      <option>Select Network</option>
                      <option>GLO</option>
                      <option>AIRTEL</option>
@@ -67,17 +71,20 @@
                  <div class="new-form">
 
                  </div>
-                 <button type="submit" id="Add-row">Add Another Row</button>
                  <button onclick="window.location.href='../SEND AIRTIME/send.html'" type="submit" id="Add-intern">Add Customer</button>
+                 <button type="submit" id="Add-row">Add New Row</button>
+                
              </form>
              
 
          </div>
          <div class="image">
              <img src="circles.png" alt="new Img">
+
          </div>
      </div>
 
     <script src="Add.js"></script>
+
 </body>
 </html>
