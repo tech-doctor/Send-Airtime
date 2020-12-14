@@ -1,8 +1,38 @@
-const addRow = document.getElementById("Add-row")
+const  sideClick = document.querySelectorAll(".sidebar-content p");
+
+sideClick.forEach(sideClick => {
+    sideClick.addEventListener('click', (e)=> {
+        const active = document.querySelectorAll('.active');
+        active.forEach(active => {
+            if(active) {
+                active.classList.remove('active');
+            }
+            e.target.classList.add('active');
+        })
+        
+
+        const display = document.querySelectorAll('.display')
+        display.forEach(display => {
+            if(display.getAttribute('data-number') === sideClick.getAttribute('data-number')){
+                display.style.display = "block"
+            }
+            else{
+                display.style.display = 'none';
+            }
+        })
+
+    })
+})
+
+
+
+
+
+const addRow = document.getElementById("Add-row");
 const newForm = document.querySelector('.new-form');
 const menuIcon = document.getElementById("bars-icon");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
-const fixedSidebar = document.querySelector('.fixed-sidebar')
+const fixedSidebar = document.querySelector('.fixed-sidebar');
 
 
 document.addEventListener('click', (e) => {
@@ -19,12 +49,12 @@ document.addEventListener('click', (e) => {
 const name = document.querySelector('#name')
 const addCustomer = document.querySelector('#Add-intern')
 
-const nameValue = name.value
+//const nameValue = name.value
 
-addCustomer.addEventListener('submit', (e) => {
-    //e.preventDefault()
-    console.log(name.value)
-})
+// addCustomer.addEventListener('submit', (e) => {
+//     //e.preventDefault()
+//     console.log(name.value)
+// })
 
    const  addNewForm = () => {
        newForm.innerHTML = ''
