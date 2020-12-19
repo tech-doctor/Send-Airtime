@@ -25,10 +25,10 @@
 			<div class="fixed-sidebar ">
 				<h1>Disburse.</h1>
 				<div class="sidebar-content">
-					<p class="sidebar name active" data-number="1"><i class="fas fa-user"></i>NAME</p>
+					<p class="sidebar name " data-number="1"><i class="fas fa-user"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2">Dashboard</p>
-					<p class="sidebar add-customer " data-number="3">Add Customer</p>
-					<p class="sidebar  wallet" data-number="4">Wallet</p>
+					<p class="sidebar add-customer active" data-number="3">Add Customer</p>
+					<p class="sidebar  wallet  " data-number="4">Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -36,10 +36,10 @@
 			<div class="fixed-sidebar mobile-sidebar ">
 				<h1>Disburse.</h1>
 				<div class=" sidebar-content">
-					<p class="sidebar name  active" data-number="1"><i class="fas fa-user"></i>NAME</p>
+					<p class="sidebar name  " data-number="1"><i class="fas fa-user"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2">Dashboard</p>
-					<p class="sidebar  add-customer"  data-number="3">Add Customer</p>
-					<p class="sidebar  wallet"  data-number="4">Wallet</p>
+					<p class="sidebar  add-customer  active "  data-number="3">Add Customer</p>
+					<p class="sidebar  wallet "  data-number="4">Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
@@ -52,42 +52,104 @@
 				</div>
 				<div class="display" data-number="3">
 					<div class="add-flex" >
-					<div class="Add-new">
-						<h1>Add  New Customer</h1>
-						<p>Fill all the input fields, else entry will not be added </p>
-						<form action="/SEND-AIRTIME/send.html" method="GET">
-							<input class="form" id="name" type="text" name="name"  placeholder="Full Name">
-							<br>
-							<input class="form" type="text" name="track"  placeholder="Track">
-							<br>
-							<input class="form" type="number" name="mobile" placeholder="Mobile Number">
-							<br>
-							<select class="select" name="network">
-								<option>Select Network</option>
-								<option>GLO</option>
-								<option>AIRTEL</option>
-								<option>MTN</option>
-								<option>9MOBILE</option>
-							</select>
-							<br>
-							<div class="new-form">
-							</div>
-							<button onclick="window.location.href='../SEND AIRTIME/send.html'" type="submit" id="Add-intern">Add Customer</button>
-							<button type="submit" id="Add-row">Add New Row</button>			
-						</form>
-					</div>
-					<div class="image">
-						<img src="circles.png" alt="new Img">
-					</div>
+						<div class="Add-new">
+							<h1>Add  New Customer</h1>
+							<p>Fill all the input fields, else entry will not be added </p>
+							<form>
+								<div class="new-form">
+									<div class="each-form">
+										<input class="form" id="full-name" type="text" name="name" placeholder="Full Name..">
+										<br>
+										<input class="form" type="text" id="track" name="track"  placeholder="Track">
+										<br>
+										<input class="form" type="number" id="mobileNumber" name="mobile" placeholder="Mobile Number">
+										<br>
+										<select class="select" name="network" id="network">
+											<option>Select Network</option>
+											<option>GLO</option>
+											<option>AIRTEL</option>
+											<option>MTN</option>
+											<option>9MOBILE</option>
+										</select>
+										<br>
+									</div>
+								</div>
+                <!-- <button onclick="window.location.href='../SEND AIRTIME/send.html'" type="submit" id="Add-intern">Add Customer</button> -->
+                <button type="submit" id="Add-intern">Add Customer</button>
+								<button type="button" id="Add-row">Add New Row</button>
+							</form>
+						</div>
+						<div class="image">
+							<img src="circles.png" alt="new Img">
+						</div>
+			    </div>
 			  </div>
-			</div>
 				<div class="display" data-number="4">
-					<h2>Wallet details</h2>
-			</div>
-
-				
+					<div class="wallet-div">
+						<div class="fund-modal-view">
+							<div class="modal">
+								<div class="fund-wallet-modal">
+									<p class="close">&times;</p>
+									<p class="fund-paragraph">Fund Wallet</p>
+									<form>
+										<input type="number" id="amount" name="amount" placeholder="Amount needed.." required><br>
+										<input type="number" id="phone-number" name="phone" placeholder="Generated phone no.." required><br>
+                    <button type="submit">Fund</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="create-modal-view">
+							<div class="modal">
+								<div class="create-wallet-modal">
+									<p class="close">&times;</p>
+									<p class="create-paragraph">Create Wallet</p>
+									<form>
+										<label class="first-name">First Name</label>
+										<input type="text" name="name" id="firstName" placeholder="e.g John..." required><br>
+										<label class="last-name">Last Name</label>
+										<input  type="text" name="name" id="lastName" placeholder="Smith..." required><br>
+										<label class="email">Email</label>
+										<input  type="email" name="email" id="email" placeholder="johnsmith@gmail.com" required><br>
+										<label class="DOB">Date of birth</label>
+										<input  type="number" name="DOB" id="DOB" placeholder="2001-01-12" required><br>
+										<button type="submit">Generate</button>	
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="main-view">
+							<div class="flex-view">
+                <div class="wallet-btn-div">
+                  <div class= "wallet-balance">
+                    <p class="heading">Wallet balance:</p>
+                    <div class="details">
+                      <p class="balance">#700.00</p>
+                      <p class = "currency">NGN.</p>
+                    </div>
+                  </div>
+                  <div class="button-div">
+                    <button class="create">Create Wallet</button>
+                    <button class="fund">Fund wallet</button>
+                  </div>
+                </div>
+								<div class="self-balance">
+                  <p class="heading">Bank balance:</p>
+									<p class="details"> 
+                    <i class="fas fa-money-check-alt"></i>
+										<br><br>Your  bank balance will be displayed here <br>once you create a wallet
+									</p>
+                </div>
+              </div>	
+              <div class="message-div">
+                <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.
+                </p>
+              </div>
+						</div>
+					</div>
+			  </div>	
 		  </div>
 	  </div>
-		<script src="Add.js"></script>
+		<script  type="module" src="Add.js"></script>
 	</body>
 </html>

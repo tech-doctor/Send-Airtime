@@ -1,6 +1,7 @@
 body{
-	margin: 0px auto;
+	margin: 0 auto;
 	font-family: Arial, Helvetica, sans-serif;
+	/* overflow: hidden; */
 }
 
 .navigation{
@@ -99,11 +100,16 @@ li button{
 }
 .active {
   background-color: rgb(43, 126, 126) !important;
+  border-left: 3px solid white;
 }
 
-.display:not(:first-child){
-  display: none;
+.display:not(:nth-child(3n+3)){
+	display: none;
 }
+
+/* .display:not(:last-child){
+	display: none
+  } */
 
 .sidebar-content{
   padding-top: 4em;
@@ -144,10 +150,7 @@ li button{
 
 .content{
 	position: relative;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding-top: 5em;
+	padding-top: 1em;
 }
 
 @media(max-width:1200px) and (min-width:850px){
@@ -156,11 +159,12 @@ li button{
 		margin-left: 200px;
 	}
 }
+/* /////////////////////////////////////////////////////////////A D D  CU S T O M E R//////////////////////////////////////////////////////// */
 
 .add-flex{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .Add-new{
@@ -227,5 +231,325 @@ img{
 	cursor: pointer;
 }
 
+
+
+/* ///////////////////////////////////////////////////////////W A L L E T/////////////////////////////////////////////////////// */
+
+.wallet-div{
+   margin-top: 100px;
+   width: 100%;
+   height: 100%;
+}
+ .wallet-div .main-view .flex-view{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100%;
+	/* margin-top: 100px; */
+	margin-left: 100px;
+ }
+
+ 
+ .wallet-div .main-view{
+	 width: 100%;
+ }
+.wallet-btn-div{
+	width: 30%;
+	
+}
+.wallet-btn-div  .button-div{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-div .create {
+	 cursor: pointer;
+	 background-color: white;
+	 border: 1px solid rgb(0, 0, 0);
+	 padding: 0.4em 0.3em;
+	 border-radius: 4px;
+	 width: 30%;
+}
+.button-div .create:hover{
+	background-color: rgb(211, 211, 211);
+}
+
+.button-div .fund{
+	cursor: pointer;
+	background-color: rgb(43, 126, 126);
+	color: white;
+	border-radius: 4px;
+	width: 30%;
+	border: 1px solid white;
+	padding: 0.4em 0.3em;
+}
+
+.wallet-balance{
+	border: 1px solid black;
+	background-color: rgb(53, 53, 53);
+	border-radius: 6px;
+	color: white;
+	width: 100%;
+	padding: 0em 0.5em;
+	margin-left: -10px;	
+}
+
+.wallet-balance .details{
+ text-align: center;
+ padding:  0em 0.5em;
+
+}
+.wallet-balance .details .balance{
+	font-size: 27px;
+}
+
+.wallet-balance .details .currency{
+	font-size: 23px;
+	color: rgb(206, 206, 206);
+}
+
+.self-balance{
+	/* border: 1px solid black; */
+	background-color: rgb(247, 247, 247);
+	width: 30%;
+	padding:  0em 0.5em;
+	box-shadow: 1px 1px 3px 0px;
+	border-radius: 6px;
+	margin-top: -35px;
+
+}
+
+.self-balance .heading{
+    font-size: 18px;
+}
+
+.fa-money-check-alt{
+	color:  rgb(187, 187, 187);
+	text-align: center;
+}
+.self-balance .details{
+	text-align: center;
+	padding: 1em  0em;
+	color: rgb(187, 187, 187);
+}
+.main-view .message-div{
+	margin-top: 20px;
+	border: 1px solid rgb(43, 126, 126);
+	border-radius: 10px;
+	width: 50%;
+	height: 70vh;
+	margin-left: 30%;
+	margin-top: 30px;
+}
+.main-view .message-div .message{
+	text-align: center;
+}
+@media(max-width:1200px){
+	.wallet-div .main-view .flex-view{
+		margin-left: 0px;
+	}
+	.self-balance .details{
+		text-align: center;
+	}	
+}
+@media(max-width:800px){
+	.wallet-btn-div{
+		width: 80%;
+	}
+	.self-balance{
+		width: 80%;
+		margin-top: 25px;
+	}
+	.main-view .message-div{
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+}
+
+
+/* //////////////////////////CREATE WALLET MODAL//////////////////////// */
+.modal{
+	background-color: black;
+	width: 100%;
+	height: 200vh;
+	z-index: 1;
+	position: fixed;
+	opacity: 0.95;
+	margin-top: -160px;
+	display: none;
+}
+
+.create-wallet-modal{
+	background-color: rgb(245, 245, 245);
+	position: fixed;
+	z-index: 1;
+	top: 200px;
+	left: 40%;
+	padding:  2em ;
+	border-radius: 3px;
+}
+.create-paragraph{
+	text-align: center;
+	font-weight: 700;
+	font-size: 25px;
+
+}
+
+.create-wallet-modal label{
+	display: inline-block;
+	float: left;
+	clear: left;
+	text-align: right;
+	padding: 0.6em 1em;
+	margin-top: 10px;
+	
+}
+
+.create-wallet-modal input{
+	display: inline-block;
+	float: right;
+	padding: 0.6em 2em;
+	margin-top: 10px;
+	border-radius: 4px;
+	border: 1px solid rgb(182, 182, 182);
+	outline: none;
+	
+}
+
+.create-wallet-modal button{
+	position: relative;
+	/* left: 250px; */
+	float: right;
+	cursor: pointer;
+	margin-top: 15px;
+	width: 30%;
+	border-radius: 4px;
+	border: 1px solid rgb(145, 145, 145);
+	padding: 0.2em 1em;	
+}
+
+.create-wallet-modal button:hover{
+	transform: scale(1.1);
+	background-color: rgb(44, 44, 44);
+	color: white;
+}
+
+ .close{
+	 position: relative;
+	float: right;
+	font-size: 30px;
+	margin-top: -23px;
+	left: 20px;
+	cursor: pointer;
+}
+.fund-paragraph{
+	text-align: center;
+	font-size: 25px;
+
+}
+
+.fund-wallet-modal{
+	background-color: white;
+	position: fixed;
+	z-index: 1;
+	top: 200px;
+	left: 40%;
+	padding:  2em;
+	width: 30%; 
+}
+
+.fund-wallet-modal input{
+	/* padding: 10px  4em ; */
+	width: 100%;
+	border: 1px solid  rgb(43, 126, 126);
+	padding: 1em 0.3em;
+	margin-bottom: 30px;
+	outline: none;
+	border-radius: 3px;
+}
+.fund-wallet-modal button{
+	position: relative;
+	width: 70%;
+	margin:  0 auto;
+	padding: 0.3em;	
+	margin-left: 18%;
+	cursor: pointer;
+	background-color: rgb(43, 126, 126);
+	color: white;
+	border: 1px solid rgb(43, 126, 126);
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+
+
+
+@media(min-width:800px){
+	 .close{
+		display: none;	
+	}
+}
+
+@media(max-width:800px){
+	.create-wallet-modal{
+		left: 18%;	
+	}
+	.fund-wallet-modal{
+		width: 50%;
+		left: 20%;
+	}
+}
+
+@media(max-width:500px){
+	.create-wallet-modal{
+		left: 6%;	
+	}
+	.create-wallet-modal label{
+		float: center;
+		padding: 0.4em;
+	}
+	.create-wallet-modal input{
+		padding: 0.4em;
+
+	}
+	.fund-wallet-modal{
+		width: 60%;
+		left: 10%;
+	}
+}
+
+@media(max-width:360px){
+	.create-wallet-modal{
+		left: 0%;
+		top: 10px;	
+	}
+	.create-wallet-modal label{
+		display: inline-block;
+		float: left;
+		clear: left;
+		text-align: right;
+		padding: 0.6em 1em;
+		margin-top: 10px;	
+	}
+	
+	.create-wallet-modal input{
+		display: inline-block;
+		float: right;
+		padding: 0.6em 2em;
+		margin-top: 10px;
+		border-radius: 4px;
+		border: 1px solid rgb(182, 182, 182);
+		outline: none;	
+	}
+	.fund-wallet-modal{
+		width: 60%;
+		left: 10%;
+		top: 100px;
+	}
+	
+}
 
 
