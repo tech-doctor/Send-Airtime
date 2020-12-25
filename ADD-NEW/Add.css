@@ -558,7 +558,7 @@ img{
 /* /////////////////////////////////////////////////////D A S H B O A R D///////////////////////////////////////////////////////// */
 .dashboard-div{
 	padding-top: 100px;
-	background-color: rgb(235, 235, 235);
+	background-color: rgb(241, 241, 241);
 	height: 100%;
 	
 }
@@ -570,7 +570,6 @@ img{
 	width: 100%;
 	margin-left: 100px;
 	/* margin: auto; */
-
 }
 .dashboard-div .div-1 .balance-box{
 	/* border: 1px solid black; */
@@ -615,6 +614,34 @@ img{
 .dashboard-div .div-3 .transaction-div .transaction-table table{
 	/* margin-top: 200px; */
 }
+
+.transaction-button{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0em 0.5em;
+}
+.transaction-button button{
+	font-size: 18px;
+	padding: 0.4em 0.7em;
+	cursor: pointer;
+	color: white;
+	background-color: rgb(46, 46, 46);
+	border: 1px solid rgb(145, 145, 145);
+	border-radius: 4px;
+}
+.transaction-button button:hover{
+	background-color: rgb(70, 70, 70);
+	color: white;
+	border: 1px solid rgb(145, 145, 145);
+	border-radius: 4px;
+}
+
+.transaction-button h3{
+	font-size: 30px;
+	
+}
+
 
 .table{
     padding: 20px;
@@ -675,6 +702,12 @@ th,td{
 		 /* margin-left: 100px; */
 		overflow-x: scroll;
 	} 
+	.transaction-button button{
+		font-size: 15px;
+	}
+	.transaction-button h3{
+		font-size: 25px;
+	}
 	
 }
 
