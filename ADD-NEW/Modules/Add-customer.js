@@ -23,28 +23,29 @@ const addCustomer = () =>{
     return result;
   }
   
+  
 
   //////Add more formfield
   addRow.addEventListener('click', (event) => {
     event.preventDefault()
     newForm.innerHTML += addNewForm();
-    //getForm()  
+    getForm()  
   })
   
   function getForm(){
     const eachForm = document.querySelectorAll('.each-form')  
-    console.log(eachForm.length)
-  
-    return eachForm
+    //console.log(eachForm.length)
+    //return eachForm.length
   }
   
   ///Get Input value
   function getInputVal(){
-    let fullName = document.querySelector('#full-name');
-    let track =  document.querySelector('.Add-new #track');
-    let mobileNumber = document.querySelector('.Add-new #mobileNumber');
-    let network = document.querySelector('.Add-new #network'); 
-    // getForm()
+    let fullName = document.querySelectorAll('#full-name');
+    let track =  document.querySelectorAll('.Add-new #track');
+    let mobileNumber = document.querySelectorAll('.Add-new #mobileNumber');
+    let network = document.querySelectorAll('.Add-new #network'); 
+   // getForm()
+    //console.log(eachForm.length)
     return  {
       fullName: fullName.value,
       track: track.value,
@@ -54,6 +55,7 @@ const addCustomer = () =>{
   }
 
   //Add customer 
+  //const formField = document.querySelector('.formField')
   const addCustomer = document.querySelector('#Add-intern')
   addCustomer.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -61,11 +63,10 @@ const addCustomer = () =>{
     const  inputValue = getInputVal();
     const {fullName, track, mobileNumber, network} = inputValue;
     console.log(fullName, track,mobileNumber,network)
-    // postData()  
+    // postAirtimeData()  
   })
-  
-  /////Send Data to Airtim API
-  function postData(){
+  /////Send Data to Airtime API
+  function postAirtimeData(){
     // getInputVal(mobileNumber, network)
     //console.log(mobileNumber, network)
   const data = {

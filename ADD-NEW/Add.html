@@ -26,9 +26,9 @@
 				<h1>Disburse.</h1>
 				<div class="sidebar-content">
 					<p class="sidebar name " data-number="1"><i class="fas fa-user"></i>NAME</p>
-					<p class="sidebar dashboard" data-number="2">Dashboard</p>
-					<p class="sidebar add-customer active" data-number="3">Add Customer</p>
-					<p class="sidebar  wallet  " data-number="4">Wallet</p>
+					<p class="sidebar dashboard active" data-number="2">Dashboard</p>
+					<p class="sidebar add-customer " data-number="3">Add Customer</p>
+					<p class="sidebar  wallet " data-number="4">Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -37,9 +37,9 @@
 				<h1>Disburse.</h1>
 				<div class=" sidebar-content">
 					<p class="sidebar name  " data-number="1"><i class="fas fa-user"></i>NAME</p>
-					<p class="sidebar dashboard" data-number="2">Dashboard</p>
-					<p class="sidebar  add-customer  active "  data-number="3">Add Customer</p>
-					<p class="sidebar  wallet "  data-number="4">Wallet</p>
+					<p class="sidebar dashboard active" data-number="2">Dashboard</p>
+					<p class="sidebar  add-customer   "  data-number="3">Add Customer</p>
+					<p class="sidebar  wallet"  data-number="4">Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
@@ -48,7 +48,94 @@
             <h2>Name details</h2>
 				</div>
 				<div class="display" data-number="2">
-					<h2>dashboard details</h2>
+					<div class="dashboard-div">
+            <div class="div-1 flex-div">
+              <div class="account-Number balance-box">
+                <p class="heading">Account-Number</p>
+                <p class="amount">2388495663</p>
+              </div>
+              <div class="balance-dashboard balance-box">
+                <p class="heading">Bank-balance</p>
+                <p class="amount">#2000</p>
+              </div>
+              <div class="wallet-dashboard balance-box">
+                <p class="heading">Wallet balance</p>
+                <p class="amount">#600</p>
+              </div>
+						</div>
+						<div class="div-2">
+							<p><span class="heading">Bank:</span><span class="detail"> polaris bank</span></p>
+							<p><span class="heading">Phone Number:</span><span class="detail"> 08067883093</span></p>
+						</div>
+						<div class="div-3">
+							<div class="transaction-div">
+								<div class="transaction-table">
+									<h3>Table</h3>
+									<table cellspacing="35px" style="width:100%" id="t01">
+										<thead>
+											 <th>S/N</th>
+											 <th>Currency</th>
+											 <th>Amount</th>
+											 <th id="category">Category</th>
+											 <th id="narration">Narration</th>
+											 <th>Date</th>
+										</thead>
+									 <tbody>
+										<tr>
+											<td>1</td>
+											<td>
+												<div class="basic-info">
+													<p>NGN</p>
+												</div>
+											</td>
+											<td>25</td>
+											<td id="categorate">Bank Transfer Charges</td>
+											<td id="narrate">
+													Transaction Charge for Bank Transfer
+											</td>
+											<td>
+													Date
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>
+													<div class="basic-info">
+															<p>NGN</p>
+												</div>
+											</td>
+											<td>25</td>
+											<td id="categorate">Bank Transfer Charges</td>
+											<td id="narrate">
+													Transaction Charge for Bank Transfer
+											</td>
+											<td>
+													Date
+											</td>
+									 </tr>
+									 <tr>
+										<td>3</td>
+										<td>
+												<div class="basic-info">
+														<p>NGN</p>
+											</div>
+										</td>
+		
+										<td>25</td>
+										<td id="categorate">Bank Transfer Charges</td>
+										<td id="narrate">
+												Transaction Charge for Bank Transfer
+										</td>
+										<td>
+												Date
+										</td>
+									 </tr>
+									 </tbody>
+								</table> 
+								</div>	
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="display" data-number="3">
 					<div class="add-flex" >
@@ -76,7 +163,7 @@
 								</div>
                 <!-- <button onclick="window.location.href='../SEND AIRTIME/send.html'" type="submit" id="Add-intern">Add Customer</button> -->
                 <button type="submit" id="Add-intern">Add Customer</button>
-								<button type="button" id="Add-row">Add New Row</button>
+								<button type="submit" id="Add-row">Add New Row</button>
 							</form>
 						</div>
 						<div class="image">
@@ -91,9 +178,9 @@
 								<div class="fund-wallet-modal">
 									<p class="close">&times;</p>
 									<p class="fund-paragraph">Fund Wallet</p>
-									<form>
-										<input type="number" id="amount" name="amount" placeholder="Amount needed.." required><br>
-										<input type="number" id="phone-number" name="phone" placeholder="Generated phone no.." required><br>
+									<form id="fundForm">
+										<input type="number" id="amount" name="amount" placeholder="Amount needed.." ><br>
+										<input type="number" id="phoneNumber" name="phone" placeholder="Generated phone no.." ><br>
                     <button type="submit">Fund</button>
 									</form>
 								</div>
@@ -104,7 +191,7 @@
 								<div class="create-wallet-modal">
 									<p class="close">&times;</p>
 									<p class="create-paragraph">Create Wallet</p>
-									<form>
+									<form id="generateForm">
 										<label class="first-name">First Name</label>
 										<input type="text" name="name" id="firstName" placeholder="e.g John..." required><br>
 										<label class="last-name">Last Name</label>
@@ -112,7 +199,7 @@
 										<label class="email">Email</label>
 										<input  type="email" name="email" id="email" placeholder="johnsmith@gmail.com" required><br>
 										<label class="DOB">Date of birth</label>
-										<input  type="number" name="DOB" id="DOB" placeholder="2001-01-12" required><br>
+										<input  type="date" name="DOB" id="DOB" placeholder="2001-01-12" required><br>
 										<button type="submit">Generate</button>	
 									</form>
 								</div>
