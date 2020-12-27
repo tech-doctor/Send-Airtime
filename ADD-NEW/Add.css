@@ -115,7 +115,7 @@ li button{
   padding-top: 4em;
 }
 
-.sidebar-content .fa-user{
+.sidebar-content .side-icon{
 	font-size: 20px;
 	margin-right: 10px;
 }
@@ -384,6 +384,7 @@ img{
 	display: none;
 }
 
+
 .create-wallet-modal{
 	background-color: rgb(245, 245, 245);
 	position: fixed;
@@ -450,7 +451,6 @@ img{
 .fund-paragraph{
 	text-align: center;
 	font-size: 25px;
-
 }
 
 .fund-wallet-modal{
@@ -581,8 +581,8 @@ img{
 
 }
 .dashboard-div .div-1 .balance-box .heading{
-	font-size: 20px;
-	/* font-weight: 700; */
+	font-size: 18px;
+	color: rgb(60, 139, 139);
 }
 
 .dashboard-div .div-1 .balance-box .amount{
@@ -592,8 +592,14 @@ img{
 }
 
 .dashboard-div .div-2{
-	margin-left: 350px;
-	margin-top: 100px;
+	/* margin-left: 350px;
+	margin-top: 100px; */
+	border: 3px dashed rgb(60, 139, 139);
+	border-radius: 5px;
+	padding: 1em;
+	width: 40%;
+	margin: 100px auto;
+	text-align: center;
 }
 .dashboard-div .div-2  .heading{
 	font-size: 20px;
@@ -601,7 +607,19 @@ img{
 }
 
 .dashboard-div .div-2  .detail{
-	font-size: 20px;
+	font-size: 18px;
+}
+.dashboard-div .div-2  .number{
+	margin-top: 200px;
+}
+
+.fa-copy{
+	background-color: rgb(178, 236, 236);
+	color: teal;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.2em 0.5em;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
 .dashboard-div .div-3{
@@ -609,6 +627,7 @@ img{
 	margin-top: 100px;
 	width: 80%;
 	margin-left: 280px;
+	margin-bottom: 50px;
 }
 
 .dashboard-div .div-3 .transaction-div .transaction-table table{
@@ -645,29 +664,46 @@ img{
 
 .table{
     padding: 20px;
-	text-align: center;
+	text-align: center;	
 }
 
 #t01 th{
-    background-color:  rgb(60, 139, 139);
-    color: white;
+    background-color:  rgb(43, 126, 126);
+	color: white;
+	padding: 1em;
 }
 
 #t01 tr {
-    background-color: rgb(243, 243, 243);
+    /* background-color: rgb(243, 243, 243); */
     border-top: 1px solid rgb(150, 141, 141);
     border-bottom: 1px solid rgb(150, 141, 141);
     border-radius: 15px;
 }
 
+/* td{
+	background-color: rebeccapurple;
+} */
+
 table, th, td{
-    border-collapse: collapse;
+	border-collapse: collapse;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
 }
 
-th,td{
-    padding: 10px;
-    text-align: center;
+table tbody tr:nth-child(odd){
+	/* background-color: white; */
+	/* box-shadow: 1px 0px 3px 0px; */
 }
+
+table tbody tr:nth-child(even){
+	background-color: rgb(255, 255, 255);
+	/* box-shadow: 1px 0px 3px 0px; */
+}
+
+/* th,td{
+    
+} */
 
 
 @media(max-width:1200px){
@@ -675,10 +711,14 @@ th,td{
 		margin-left: 0;
 	}
 	.dashboard-div .div-2{
-		margin-left: 100px;
+		margin-left:160px;
+		width: 70%;
 	}
 	.dashboard-div .div-3{
 		margin-left: 100px;
+	}
+	table, th, td{
+		font-size: 15px;
 	}
 }
 
@@ -690,7 +730,7 @@ th,td{
 
 	.dashboard-div .div-2{
 		margin-left: 40px;
-
+		width: 70%;
 	}
 
 	.dashboard-div .div-3{
