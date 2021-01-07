@@ -91,7 +91,7 @@ li button{
 }
 
 .sidebar-content p{
-	padding: 2em 1em 2em 3em;
+	padding: 1.5em 1em 1.5em 3em;
 	color: white;
 }
 
@@ -101,6 +101,7 @@ li button{
 .active {
   background-color: rgb(43, 126, 126) !important;
   border-left: 4px solid white;
+
 }
 
 .display:not(:nth-child(2)){
@@ -112,7 +113,7 @@ li button{
   } */
 
 .sidebar-content{
-  padding-top: 4em;
+  padding-top: 2em;
 }
 
 .sidebar-content .side-icon{
@@ -127,6 +128,11 @@ li button{
 	}
 }
 
+@media(min-width:800px){
+	.mobile-sidebar{
+		display: none;
+	}
+}
 
 @media (max-width: 800px){
 	.left-nav h1{
@@ -341,7 +347,7 @@ img{
 	border: 1px solid rgb(43, 126, 126);
 	border-radius: 10px;
 	width: 50%;
-	height: 70vh;
+	height: 45vh;
 	margin-left: 30%;
 	margin-top: 30px;
 }
@@ -355,6 +361,10 @@ img{
 	.self-balance .details{
 		text-align: center;
 	}	
+	.main-view .message-div{
+		width: 80%;
+		margin-left: 10%;
+	}
 }
 @media(max-width:800px){
 	.wallet-btn-div{
@@ -582,7 +592,7 @@ img{
 }
 .dashboard-div .div-1 .balance-box .heading{
 	font-size: 18px;
-	color: rgb(60, 139, 139);
+	/* color: rgb(60, 139, 139); */
 }
 
 .dashboard-div .div-1 .balance-box .amount{
@@ -592,9 +602,7 @@ img{
 }
 
 .dashboard-div .div-2{
-	/* margin-left: 350px;
-	margin-top: 100px; */
-	border: 3px dashed rgb(60, 139, 139);
+	border: 2px dashed rgb(60, 139, 139);
 	border-radius: 5px;
 	padding: 1em;
 	width: 40%;
@@ -614,7 +622,7 @@ img{
 }
 
 .fa-copy{
-	background-color: rgb(178, 236, 236);
+	background-color: rgb(190, 241, 241);
 	color: teal;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 0.2em 0.5em;
@@ -623,16 +631,15 @@ img{
 }
 
 .dashboard-div .div-3{
-	/* margin-left: 350px; */
 	margin-top: 100px;
 	width: 80%;
 	margin-left: 280px;
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 }
 
-.dashboard-div .div-3 .transaction-div .transaction-table table{
-	/* margin-top: 200px; */
-}
+/* .dashboard-div .div-3 .transaction-div .transaction-table table{
+	
+} */
 
 .transaction-button{
 	display: flex;
@@ -711,7 +718,7 @@ table tbody tr:nth-child(even){
 		margin-left: 0;
 	}
 	.dashboard-div .div-2{
-		margin-left:160px;
+		margin-left:130px;
 		width: 70%;
 	}
 	.dashboard-div .div-3{
@@ -722,6 +729,8 @@ table tbody tr:nth-child(even){
 	}
 }
 
+
+
 @media(max-width:800px){
 	.dashboard-div .div-1 .balance-box{
 		width: 80%;
@@ -729,7 +738,7 @@ table tbody tr:nth-child(even){
 	}
 
 	.dashboard-div .div-2{
-		margin-left: 40px;
+		margin-left: 100px;
 		width: 70%;
 	}
 
@@ -749,5 +758,12 @@ table tbody tr:nth-child(even){
 		font-size: 25px;
 	}
 	
+}
+
+@media(max-width:700px){
+	.dashboard-div .div-2{
+		margin-left: 45px;
+	}
+
 }
 

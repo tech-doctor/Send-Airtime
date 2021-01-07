@@ -41,32 +41,20 @@ sideClick.forEach(sideClick => {
 
 ///////////////////////////////////////////////////////////////////////////A D D  C U S T O M E R/////////////////////////////////////////////////////////////////////////
 import addCustomer from './Modules/Add-customer.js'
+import Wallet from  './Modules/Wallet.js'
+import Dashboard from  './Modules/Dashboard.js'
+
   addCustomer()
 
 //////////////////////////////////////////////////////////////////////W A L L E T////////////////////////////////////////////////////////////////////////
-import Wallet from  './Modules/Wallet.js'
+
   Wallet()
 
 //////////////////////////////////////////////////////////////////////D A S H B O A R D////////////////////////////////////////////////
-const copyIcon = document.querySelector('.fa-copy')
 
 
-copyIcon.addEventListener ('click', (e) => {
- 
-  const  copyText = document.querySelector("#number");
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " );
-
-
-})
-
+  Dashboard()
 
 
 
