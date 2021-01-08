@@ -26,9 +26,9 @@
 				<h1>Disburse.</h1>
 				<div class="sidebar-content">
 					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i>NAME</p>
-					<p class="sidebar dashboard active" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
+					<p class="sidebar dashboard " data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
 					<p class="sidebar add-customer " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar  wallet active " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -37,9 +37,9 @@
 				<h1>Disburse.</h1>
 				<div class=" sidebar-content">
 					<p class="sidebar name  " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
-					<p class="sidebar dashboard active" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
+					<p class="sidebar dashboard" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
 					<p class="sidebar  add-customer   "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet"  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar  wallet active"  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
@@ -52,20 +52,26 @@
             <div class="div-1 flex-div">
               <div class="account-Number balance-box">
                 <p class="heading">Account-Number</p>
-                <p class="amount">2388495663</p>
+								<p class="amount">2388495663</p>
+								<p class="amount initial">_ _ _ _ _ _ _ _ _ _ _</p>
+								
               </div>
               <div class="balance-dashboard balance-box">
                 <p class="heading">Bank-balance</p>
-                <p class="amount">#2000</p>
+								<p class="amount">#2000</p>
+								<p class="amount initial">_ _ _ _ _ _ _ _ _ _ _</p>
               </div>
               <div class="wallet-dashboard balance-box">
                 <p class="heading">Wallet balance</p>
-                <p class="amount">#600</p>
+								<p class="amount">#600</p>
+								<p class="amount initial">_ _ _ _ _ _ _ _ _ _ _</p>
               </div>
 						</div>
 						<div class="div-2">
-							<p><span class="heading">Bank:</span><span class="detail bank"> polaris bank</span></p>
-			  <p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i  class="far fa-copy"> copy</i></p> 
+							<p><span class="heading">Bank:</span><span class="detail bank"> polaris bank</span><span> -----------------------</span></p>
+        <p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i class="far fa-copy"> copy</i></p> 
+				<!-- <p class="copy-success" >COPIED!</p> -->
+
 						</div>
 						<div class="div-3">
 							<div class="transaction-div">
@@ -74,6 +80,9 @@
 								  <button>View all</button>
 								</div>
 								<div class="transaction-table">
+									<div class="transaction-initial">
+										<p>No Transactions Yet!</p>
+									</div>
 									<table cellspacing="35px" style="width:100%" id="t01">
 										<thead>
 											 <th>S/N</th>
@@ -234,7 +243,7 @@
               </div>	
               <div class="message-div">
                 <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
-                <p class="number"> phone-number: 08067883093 </p>
+                <p class="phone-number"> Phone-number: <span id="number"> 08067883093 <i class="far fa-copy"> copy</i></span></p>
               </div>
 						</div>
 					</div>
