@@ -9,21 +9,19 @@
 
     </head>
     <body>
-        <nav>
-            <div class="navigation">
-                <div class="left-nav">
-                   <h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
-                </div>
-                <div class="right-nav">
-                </div>
-    
-            </div>
-        </nav>
-        <div class="form">
-            <div class="first">
+			<nav>
+					<div class="navigation">
+							<div class="left-nav">
+									<h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
+							</div>
+							<div class="right-nav">
+							</div>
+	
+					</div>
+			</nav>
+      <div class="form">
+        <div class="first">
       <h2>SIGN UP FORM</h2>
-      
-      
      <!--<i class="fa fa-facebook-square" id="try"></i>--> 
       <br>
       <p class="connect">Connect with:</p>
@@ -47,7 +45,7 @@
      <p>
         <label>PASSWORD</label><br>
         <div class="input-container">
-        <input class="space password-input"   type="password" name="password" placeholder="Your password... " required>
+        <input class="space password-input"   type="password" autocomplete="" name="password" placeholder="Your password... " required>
         <i class="fa fa-eye " id="toggle-password"></i>
     </div>
        <small style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
@@ -56,7 +54,7 @@
     <p>
         <label> CONFIRM PASSWORD</label><br>
         <div class="input-container">
-        <input class="space password-input"  type="password" name="password" placeholder="Confirm password..." required>
+        <input class="space password-input"  type="password" autocomplete="" name="password" placeholder="Confirm password..." required>
         <i class="fa fa-eye" id="toggle-password"></i>
     </div>
         <small id="error-message" style="display: none">Both passwords must match</small>
@@ -73,7 +71,21 @@
 </div>
 </form>
 
-
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+      <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script> -->
+      <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyDDYf_lwNGEedfBZEZvkFe6FlHYGdOhoS8",
+          authDomain: "disburse-81387.firebaseapp.com",
+          projectId: "disburse-81387",
+          appId: "1:159009687846:web:29daad92b819b263d7d9e7",
+          measurementId: "G-Z1NSE9JET0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);  
+  </script> 
 <script src="signup.js"></script>
-    </body>
+  </body>
 </html>

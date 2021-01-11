@@ -16,8 +16,6 @@ const togglePassword = document.querySelectorAll("#toggle-password")
     
  }
 
-
-
 checkBox.onchange =  function()  {
     Button.disabled = !this.checked;
     if (!Button.disabled){
@@ -27,7 +25,6 @@ checkBox.onchange =  function()  {
     }
  
 };
-
 
 function errorSubmit(e)  {
     e.preventDefault();
@@ -42,12 +39,40 @@ function errorSubmit(e)  {
         errorMessage.style.display = 'inline';
         errorMessage.style.color = 'red';
         errorMessage.style.position ='center';
-    }
-    
+    }    
 }
 
-
-
 Button.addEventListener('click', errorSubmit);
+
+///////////////////AUTHTENTICATION///////////////////////////
+const app = firebase.app()
+console.log(app)
+
+const auth = firebase.auth();
+console.log(auth)
+
+const db = firebase.firestore();
+//console.log(db)
+
+
+//update firestore settings 
+db.settings({ timestampsInSnapshots: true});
+
+
+function googleLogin() {
+   const provider = new firebase.auth.GoogleAuthProvider();
+   firebase.auth().signInWithPopup(provider)
+  .then(result => {
+    console.log(result)
+  })
+  .catch(console.log)
+ }
+
+ const googleButton = document.querySelector('#google')
+
+ googleButton.addEventListener('click', (e) => {
+     e.preventDefault()
+     googleLogin()
+ })
 
 

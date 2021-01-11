@@ -13,22 +13,16 @@ closeMenu.addEventListener("click", () =>{
     sideMenu.style.width  = '0';
 })
 
-
 /////////////////////////////////////////////////////////////////MODAL ASPECT////////////////////////////////////////////////////////////////////
-
 const modal = document.querySelector(".modal");
 const loginButton =  document.querySelectorAll('#login-button');
-
 
 loginButton.forEach(loginButtonLoop =>{
     loginButtonLoop.addEventListener('click', () => {
         modal.style.display= 'block'
         overlay.style.display = 'block'
-        console.log('click')
     })
      })
-
-
 
 document.addEventListener('click', (e) => { 
     if(loginButton[0].contains(e.target) ||  loginButton[1].contains(e.target)) {
@@ -41,9 +35,6 @@ document.addEventListener('click', (e) => {
         overlay.style.display = 'none'
     }  
 })
-
-
-
 
 
 //////////////////////////////////////////////////LOGIN FORM//////////////////////////////////////////////////////////////////////////
@@ -60,5 +51,23 @@ togglePassword.addEventListener('click', function(e) {
 })
 
 
-/////////////////////////////////////////////////////////////////SIDE MODAL ASPECT////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////FIREBASE////////////////////////////////////////////////////////////////////
+
+//const authFunction = () => {
+    //make auth and firestore refrence
+// const auth = firebase.auth();
+// console.log(auth)
+// const db = firebase.firestore();
+// console.log(db)
+
+// //update firestore settings 
+// db.settings({ timestampsInSnapshots: true});
+
+//}
+
+
+
 
