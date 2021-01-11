@@ -8,6 +8,7 @@ const Wallet = () =>{
   createWalletButon.addEventListener( 'click', (event) =>{
   modal[1].style.display = 'block'
   })
+
   //open fund wallet modal
   fundWalletButton.addEventListener( 'click', (event) => {
   modal[0].style.display = 'block'
@@ -25,6 +26,22 @@ const Wallet = () =>{
       }
     }
   }
+
+  ////copy number to clipboard /////////////////////////
+  
+
+  const copyIcon = document.querySelectorAll('.fa-copy')[1]
+  copyIcon.addEventListener ('click', (e) => {
+    e.preventDefault()
+    const  copyText = document.querySelector("#wallet-number");
+
+    let aux = document.createElement('input');
+    aux.setAttribute('Value',copyText.innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand('copy');
+    document.body.removeChild(aux);
+  })
  
   ///////////////////////////////////////// Submit generate/create wallet form. ///////////////////////////////////////////////////////
   const generateForm = document.querySelector('#generateForm')
@@ -55,8 +72,8 @@ const Wallet = () =>{
     currency: "NGN",
     SecretKey: "hfucj5jatq8h",
   }
-  const url = "https://sandbox.wallets.africa/wallet/generate";
-
+   const url = "https://sandbox.wallets.africa/wallet/generate";
+  //const url = "https://sandbox.wallets.africa/self/balance";
     const publicKey = "uvjqzm5xl6bw";
     const proxy = "https://cors-anywhere.herokuapp.com/"
     const headers = {
@@ -74,7 +91,6 @@ const Wallet = () =>{
     .then(resp => console.log(resp))
     .catch(err => console.log('Error : ',err))
   }  
-
 
 /// Submit Fund form wallet to fund wallet.
 const fundForm =document.querySelector('#fundForm')
@@ -94,15 +110,15 @@ fundForm.addEventListener ('submit', (e) => {
   function postFundwalletData(){
     fundFieldValue()
     const transaction = Math.random().toString().substr(2,9);
-  const data = {
-    amount: amount.value,
-    transactionReference: transaction,
-    phoneNumber: phoneNumber.value ,
-    SecretKey: "hfucj5jatq8h",
-  }
-  // const url = "https://sandbox.wallets.africa/self/balance";
-  const url = "https://sandbox.wallets.africa/wallet/credit";
-  const publicKey = "uvjqzm5xl6bw";
+    const data = {
+      amount: amount.value,
+      transactionReference: transaction,
+      phoneNumber: phoneNumber.value ,
+      SecretKey: "hfucj5jatq8h",
+    }
+   //const url = "https://sandbox.wallets.africa/self/balance";
+   const url = "https://sandbox.wallets.africa/wallet/credit";
+    const publicKey = "uvjqzm5xl6bw";
     const proxy = "https://cors-anywhere.herokuapp.com/"
     const headers = {
     'Content-Type' : 'application/json',
@@ -117,7 +133,47 @@ fundForm.addEventListener ('submit', (e) => {
     .then(result => result.json())
     .then(resp => console.log(resp))
     .catch(err => console.log('Error : ',err))
-}
+  }
+
+  // const mainView = document.querySelector('.main-view')
+
+  // const  updateWallet = () => {
+  //   const result = `
+  //   <div class="flex-view">
+  //     <div class="wallet-btn-div">
+  //       <div class= "wallet-balance">
+  //         <p class="heading">Wallet balance:</p>
+  //         <div class="details">
+  //           <p class="balance">#700.00</p>
+  //           <p class = "currency">NGN.</p>
+  //         </div>
+  //       </div>
+  //       <div class="button-div">
+  //         <button class="create">Create Wallet</button>
+  //         <button class="fund">Fund wallet</button>
+  //       </div>
+  //     </div>
+  //     <div class="self-balance">
+  //       <p class="heading">Bank balance:</p>
+  //       <p class="details"> 
+  //         <i class="fas fa-money-check-alt"></i>
+  //         <br><br>Your  bank balance will be displayed here <br>once you create a wallet
+  //       </p>
+  //       <p class="balance">#1588394.00</p>
+  //       <p class="currency">NGN</p>
+  //     </div>
+  //   </div>	
+  //   <div class="message-div">
+  //     <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
+  //     <p class="phone-number"> Phone-number: <span id="number"> 08067883093 <i class="far fa-copy"> copy</i></span></p>
+  //   </div> ` 
+  //   return result;
+  // }
+
+ // mainView.innerHTML += updateWallet()
+
+  
+
 }
 
 export default Wallet;

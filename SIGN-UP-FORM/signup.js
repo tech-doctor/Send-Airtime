@@ -1,29 +1,21 @@
 // const passwordInput = document.getElementById('password-input');
 // const confirmPassword = document.getElementById('confirm-input');
-const passwordInput = document.querySelectorAll('#password-input')
+const passwordInput = document.querySelectorAll('.password-input')
 const errorMessage = document.getElementById('error-message');
 const Button = document.getElementById("sign-up");
 const checkBox = document.getElementById('check');
 const togglePassword = document.querySelectorAll("#toggle-password")
-const faEye = document.querySelector(".fa-eye");
+//const faEye = document.querySelector(".fa-eye");
 
-
-function Callback() {
-    passwordInput.forEach(passwordResult => {
-    const type = passwordResult.getAttribute('type') ==='password' ? 'text' : 'password';
-    passwordResult.setAttribute('type', type);
-    return passwordResult
+ for(let i = 0; i < togglePassword.length; i++){
+    togglePassword[i].addEventListener('click', () => {
+        togglePassword[i].classList.toggle('fa-eye-slash');
+        const type = passwordInput[i].getAttribute('type') ==='password' ? 'text' : 'password';
+        passwordInput[i].setAttribute('type', type);   
+    })
     
-})  
-this.classList.toggle('fa-eye-slash');
+ }
 
-}
-
-
-
-togglePassword.forEach(toggle => {
-toggle.addEventListener('click', Callback)
-})
 
 
 checkBox.onchange =  function()  {
@@ -41,8 +33,7 @@ function errorSubmit(e)  {
     e.preventDefault();
     if (passwordInput[0].value === passwordInput[1].value) {
         passwordInput[0].style.border = 'thin solid green';
-        passwordInput[1].style.border = 'thin solid green';
-        // passwordResult.style.border = 'thin solid green';
+         passwordInput[1].style.border = 'thin solid green';
         errorMessage.style.display = 'none';
     }
     else {

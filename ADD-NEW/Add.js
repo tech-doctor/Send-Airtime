@@ -40,9 +40,12 @@ sideClick.forEach(sideClick => {
 
 
 ///////////////////////////////////////////////////////////////////////////A D D  C U S T O M E R/////////////////////////////////////////////////////////////////////////
+import Profile from './Modules/Profile.js'
 import addCustomer from './Modules/Add-customer.js'
 import Wallet from  './Modules/Wallet.js'
 import Dashboard from  './Modules/Dashboard.js'
+
+  Profile()
 
   addCustomer()
 
