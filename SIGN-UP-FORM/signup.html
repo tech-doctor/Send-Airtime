@@ -25,48 +25,46 @@
      <!--<i class="fa fa-facebook-square" id="try"></i>--> 
       <br>
       <p class="connect">Connect with:</p>
-      <form>
         <div class="Third-party-auth">
-        <button class="social" id="facebook" type="submit"><i class = "fab fa-facebook-square  fa-lg"></i>acebook</button>
-      <button class="social" id="google" type="submit"><i class = "fab fa-google"></i>oogle</button>
-    </form>
+          <button   class="social" id="facebook" type="submit"><i class = "fab fa-facebook-square  fa-lg"></i>acebook</button>
+          <button onclick="googleLogin()" class="social" id="google" type="button"><i class = "fab fa-google"></i>oogle</button>
        </div>
     <h3>Or  Sign-up Manually:</h3>
 </div>
-<form>
+<form id="signup-form">
     <div class="form-area">
+      <p class="signup-success">You've signed in</p>
+      <p class="validation-error">Error! make sure all form feild is filled</p>
 
     <p>
-        <label>EMAIL</label><br>
-        <div class="input-container">
-          <input class="space" id="email"  type="email" name="email" placeholder="Your email..." required>
-        </div>
+      <label>EMAIL</label><br>
+      <div class="input-container">
+        <input class="space" id="email"  type="email" name="email" placeholder="Your email..." required>
+      </div>
 		</p>
      <p>
         <label>PASSWORD</label><br>
         <div class="input-container">
-        <input class="space password-input"   type="password" autocomplete="" name="password" placeholder="Your password... " required>
+        <input class="space password-input" id="password"   type="password" autocomplete="" name="password" placeholder="Your password..." required>
         <i class="fa fa-eye " id="toggle-password"></i>
     </div>
        <small style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
     </p>
 
     <p>
-        <label> CONFIRM PASSWORD</label><br>
-        <div class="input-container">
-        <input class="space password-input"  type="password" autocomplete="" name="password" placeholder="Confirm password..." required>
+      <label> CONFIRM PASSWORD</label><br>
+      <div class="input-container">
+        <input class="space password-input"  id="confirm-password" type="password" autocomplete="" name="password" placeholder="Confirm password..." required>
         <i class="fa fa-eye" id="toggle-password"></i>
-    </div>
+      </div>
         <small id="error-message" style="display: none">Both passwords must match</small>
-    
 		</p>
-
    <p>By proceeding, do you agree with  our <a href="#">Terms and Conditions?</a></p>
     <p>
-     <input id="check" type="checkbox" name="terms and conditions" value="yes" required>
-     <label>I agree</label>
+      <input id="check" type="checkbox" name="terms and conditions" value="yes" >
+      <label>I agree</label>
     </p>
-    <button  class="cursor opacity" id="sign-up" type="submit" disabled="true">Continue</button>
+    <button  type="submit" class="cursor opacity" id="signup-button">Continue</button>
 </div>
 </div>
 </form>
