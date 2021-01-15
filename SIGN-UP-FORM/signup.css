@@ -136,6 +136,65 @@ body{
   animation-duration: 0.3s;
   display: none;
 }
+.signup-error p{
+  background-color: rgb(192, 59, 59);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.5s;
+  margin: auto;
+  display: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+.verify-account{
+  background-color: rgb(82, 82, 82);
+  color: white;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  font-family: arial;
+   display: none;
+}
+.verify-account .details{
+  position: relative;
+  top: 40%;
+
+}
+.verify-account .details .message{
+  font-size: 18px;
+  color: rgb(240, 240, 240);
+  font-weight: 100;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.verify-account .details .message span{
+  color: rgb(129, 209, 255);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.verify-account .details button{
+  background-color: rgb(22, 151, 238);
+  color: white;
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.verify-account .details button:active{
+  transform: scale(1.1);
+}
 
 .validation-error{
   background-color: rgb(228, 151, 151);
@@ -144,6 +203,21 @@ body{
   padding: 0.3em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: none;
+}
+
+.back-to-page{
+  text-align: center;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  width: 20%;
+  padding: 0.2em 0.1em;
+  margin:  30px auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.character{
+  opacity: 0.3;
 }
 
 @keyframes success{

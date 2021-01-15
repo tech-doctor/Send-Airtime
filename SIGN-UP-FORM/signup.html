@@ -31,9 +31,19 @@
        </div>
     <h3>Or  Sign-up Manually:</h3>
 </div>
+<div class="signup-error">
+  <p></p>
+</div>
+<div class="verify-account">
+  <div class="details">
+    <p class="message"></p>
+    <button onclick="verify()" type="button">Send verification</button>
+  </div>
+  
+</div>
 <form id="signup-form">
     <div class="form-area">
-      <p class="signup-success">You've signed in</p>
+      <p class="signup-success">You've signed up</p>
       <p class="validation-error">Error! make sure all form feild is filled</p>
 
     <p>
@@ -45,10 +55,10 @@
      <p>
         <label>PASSWORD</label><br>
         <div class="input-container">
-        <input class="space password-input" id="password"   type="password" autocomplete="" name="password" placeholder="Your password..." required>
+        <input oninput="changeValue()" class="space password-input" id="password"   type="password" autocomplete="" name="password" placeholder="Your password..." required>
         <i class="fa fa-eye " id="toggle-password"></i>
     </div>
-       <small style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
+       <small class="character" style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
     </p>
 
     <p>
@@ -66,6 +76,7 @@
     </p>
     <button  type="submit" class="cursor opacity" id="signup-button">Continue</button>
 </div>
+<p onclick = "goBack()" class="back-to-page"><i class="fas fa-arrow-left"></i> Back</p>
 </div>
 </form>
 
