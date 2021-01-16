@@ -39,7 +39,6 @@ body{
   color: red;
 }
 
-
 @keyframes Bounce{
   0% {
     top: 10px;
@@ -134,7 +133,7 @@ body{
   position: relative;
   animation: success;
   animation-duration: 0.3s;
-  display: none;
+   display: none;
 }
 .signup-error p{
   background-color: rgb(192, 59, 59);
@@ -167,13 +166,12 @@ body{
 }
 .verify-account .details{
   position: relative;
-  top: 40%;
+  top: 45%;
 
 }
 .verify-account .details .message{
   font-size: 18px;
   color: rgb(240, 240, 240);
-  font-weight: 100;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

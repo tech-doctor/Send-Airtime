@@ -1,100 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="signup.css" rel="stylesheet">
-        <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
-
-    </head>
-    <body>
-			<nav>
-					<div class="navigation">
-							<div class="left-nav">
-									<h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
-							</div>
-							<div class="right-nav">
-							</div>
-	
-					</div>
-			</nav>
-      <div class="form">
-        <div class="first">
-      <h2>SIGN UP FORM</h2>
-     <!--<i class="fa fa-facebook-square" id="try"></i>--> 
-      <br>
-      <p class="connect">Connect with:</p>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="signup.css" rel="stylesheet">
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+  </head>
+  <body>
+    <nav>
+      <div class="navigation">
+        <div class="left-nav">
+          <h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
+        </div>
+        <div class="right-nav">
+        </div>
+      </div>
+    </nav>
+    <div class="form">
+      <div class="first">
+        <h2>SIGN UP FORM</h2>
+        <br>
+        <p class="connect">Connect with:</p>
         <div class="Third-party-auth">
           <button   class="social" id="facebook" type="submit"><i class = "fab fa-facebook-square  fa-lg"></i>acebook</button>
           <button onclick="googleLogin()" class="social" id="google" type="button"><i class = "fab fa-google"></i>oogle</button>
-       </div>
-    <h3>Or  Sign-up Manually:</h3>
-</div>
-<div class="signup-error">
-  <p></p>
-</div>
-<div class="verify-account">
-  <div class="details">
-    <p class="message"></p>
-    <button onclick="verify()" type="button">Send verification</button>
-  </div>
-  
-</div>
-<form id="signup-form">
-    <div class="form-area">
-      <p class="signup-success">You've signed up</p>
-      <p class="validation-error">Error! make sure all form feild is filled</p>
-
-    <p>
-      <label>EMAIL</label><br>
-      <div class="input-container">
-        <input class="space" id="email"  type="email" name="email" placeholder="Your email..." required>
+        </div>
+        <h3>Or  Sign-up Manually:</h3>
       </div>
-		</p>
-     <p>
-        <label>PASSWORD</label><br>
-        <div class="input-container">
-        <input oninput="changeValue()" class="space password-input" id="password"   type="password" autocomplete="" name="password" placeholder="Your password..." required>
-        <i class="fa fa-eye " id="toggle-password"></i>
-    </div>
-       <small class="character" style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
-    </p>
-
-    <p>
-      <label> CONFIRM PASSWORD</label><br>
-      <div class="input-container">
-        <input class="space password-input"  id="confirm-password" type="password" autocomplete="" name="password" placeholder="Confirm password..." required>
-        <i class="fa fa-eye" id="toggle-password"></i>
+      <div class="signup-error">
+        <p></p>
       </div>
-        <small id="error-message" style="display: none">Both passwords must match</small>
-		</p>
-   <p>By proceeding, do you agree with  our <a href="#">Terms and Conditions?</a></p>
-    <p>
-      <input id="check" type="checkbox" name="terms and conditions" value="yes" >
-      <label>I agree</label>
-    </p>
-    <button  type="submit" class="cursor opacity" id="signup-button">Continue</button>
-</div>
-<p onclick = "goBack()" class="back-to-page"><i class="fas fa-arrow-left"></i> Back</p>
-</div>
-</form>
+      <div class="verify-account">
+        <div class="details">
+          <p class="message"></p>
+          <button onclick="verify()" type="button">Send verification</button>
+        </div>   
+      </div>
+      <form id="signup-form">
+      <div class="form-area">
+        <p class="signup-success">You've signed up</p>
+        <p class="validation-error">Error! make sure all form feild is filled</p>
+        <p>
+          <label>EMAIL</label><br>
+          <div class="input-container">
+            <input class="space" id="email"  type="email" name="email" placeholder="Your email..." required>
+          </div>
+        </p>
+        <p>
+          <label>PASSWORD</label><br>
+          <div class="input-container">
+            <input oninput="changeValue()" class="space password-input" id="password"   type="password" autocomplete="" name="password" placeholder="Your password..." required>
+            <i class="fa fa-eye " id="toggle-password"></i>
+          </div>
+          <small class="character" style="font-family: Arial, Helvetica, sans-serif;">(Please enter a password between 6 and 12 characters)</small>
+        </p>
+        <p>
+          <label> CONFIRM PASSWORD</label><br>
+          <div class="input-container">
+            <input class="space password-input"  id="confirm-password" type="password" autocomplete="" name="password" placeholder="Confirm password..." required>
+            <i class="fa fa-eye" id="toggle-password"></i>
+          </div>
+          <small id="error-message" style="display: none">Both passwords must match</small>
+        </p>
+        <p>By proceeding, do you agree with  our <a href="#">Terms and Conditions?</a></p>
+        <p>
+          <input id="check" type="checkbox" name="terms and conditions" value="yes" >
+          <label>I agree</label>
+        </p>
+        <button  type="submit" class="cursor opacity" id="signup-button">Continue</button>
+      </div>
+      <p onclick = "goBack()" class="back-to-page"><i class="fas fa-arrow-left"></i> Back</p>
+      </div>
+    </form>
 
-<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-      <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script> -->
-      <script>
-        var firebaseConfig = {
-          apiKey: "AIzaSyDDYf_lwNGEedfBZEZvkFe6FlHYGdOhoS8",
-          authDomain: "disburse-81387.firebaseapp.com",
-          projectId: "disburse-81387",
-          appId: "1:159009687846:web:29daad92b819b263d7d9e7",
-          measurementId: "G-Z1NSE9JET0"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);  
-  </script> 
-<script src="signup.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script> -->
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDYf_lwNGEedfBZEZvkFe6FlHYGdOhoS8",
+        authDomain: "disburse-81387.firebaseapp.com",
+        projectId: "disburse-81387",
+        appId: "1:159009687846:web:29daad92b819b263d7d9e7",
+        measurementId: "G-Z1NSE9JET0"
+      };
+      // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);  
+    </script> 
+    <script src="signup.js"></script>
   </body>
 </html>

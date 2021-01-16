@@ -13,6 +13,7 @@ for(let i = 0; i < togglePassword.length; i++){
   })   
 }
 
+// when the checkbox is clicked
 checkBox.onchange =  function()  {
   signUpButton.disabled = !this.checked;
   if (!signUpButton.disabled){
@@ -22,31 +23,29 @@ checkBox.onchange =  function()  {
   }
 };
 
-
-///////////////////AUTHTENTICATION///////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////AUTHTENTICATION///////////////////////////////////////////////////////////////////////////
+// initializing the  Authentication methods.
 const app = firebase.app()
-console.log(app)
 const auth = firebase.auth();
-console.log(auth)
-const db = firebase.firestore();
-//console.log(db)
-
+const db = firebase.firestore()
 //update firestore settings 
 db.settings({ timestampsInSnapshots: true});
 
+/// Authentication function  with Google signup
 const googleLogin = () => {
-   const provider = new firebase.auth.GoogleAuthProvider();
-   firebase.auth().signInWithPopup(provider)
+  let provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
   .then(result => {
     console.log(result.user)
+    signupSuccess()
   })
-  .catch(console.log)
+  .catch(error => {
+    signupError.innerHTML = `${error.message} !`
+    signupErrorFunction()
+  })
  }
 
-
- const success = document.querySelector('.signup-success')
- const validationError =document.querySelector('.validation-error')
-
+ ////// get value of the form fields
  const  getValue = () => {
   emailValue = email.value;
   passwordValue = passwordInput[0].value;
@@ -55,15 +54,19 @@ const googleLogin = () => {
      emailValue, passwordValue , confirmPasswordValue
    }
  }
- 
+
+ ////changes password fields to red
  const redBorder = () =>{
   passwordInput[0].style.border = 'thin solid red';
   passwordInput[1].style.border = 'thin solid red';
-
  }
 
 
+ const success = document.querySelector('.signup-success')
+ const validationError =document.querySelector('.validation-error')
 
+
+ /////General form validation
  function formValidation(e)  {
   e.preventDefault();
     if(passwordInput[0].value === '' || passwordInput[1].value === '' || email.value === ''){
@@ -90,21 +93,27 @@ const googleLogin = () => {
   }    
 }
 
+///oninputchange in the password field
 const changeValue = () => {
  const character = document.querySelector('.character')
-  if(passwordInput[0].value.length < 6 || passwordInput[0].value.length > 12){
-    character.style.opacity = "1"
-  }
-  else{
-     character.style.opacity = "0.3"  
-  } 
+ passwordInput[0].value.length < 6 || passwordInput[0].value.length > 12 ? character.style.opacity = "1": character.style.opacity = "0.3"  
 }
 
+ const signupSuccess = () => {
+  success.style.display = "block"
+  errorMessage.style.display = 'none'
+  validationError.style.display = 'none'
+  setTimeout  (function() {
+      success.style.display = "none"
+  },3000)
+
+ }
+
+//signup users with username and password
 const verifyAccount = document.querySelector('.verify-account')
 const verificationMessage = document.querySelector('.verify-account .message')
 const signupError = document.querySelector('.signup-error p');
 
-//sign up the user
 const signupUser = () => {
   console.log(emailValue, passwordValue)
   auth.createUserWithEmailAndPassword(emailValue, passwordValue)
@@ -114,34 +123,30 @@ const signupUser = () => {
       passwordInput[0].style.border = 'thin solid green';
       passwordInput[1].style.border = 'thin solid green';
       email.style.border = 'thin solid green'
-      success.style.display = "block"
-      errorMessage.style.display = 'none'
-      validationError.style.display = 'none'
-      setTimeout  (function() {
-          success.style.display = "none"
-      },3000)
+      signupSuccess() 
     } else{
       verifyAccount.style.display = 'block'
       verificationMessage.innerHTML = `You're welcome <span> ${cred.user.email} </span> .<br>Your account has'nt been verified`  
     }  
-  })
-
-  .catch(error => {
-    console.log(error)
-    signupError.style.display = 'block'
-    signupError.innerHTML = `${error.message} !`
-    redBorder()
-    email.style.border = 'thin solid red'
-    setTimeout  (function() {
-      signupError.style.display = "none"
-  },3000)
-   
-
+  }).catch(error => {
+      console.log(error)
+      redBorder()
+      email.style.border = 'thin solid red'
+      signupError.innerHTML = `${error.message} !`
+      signupErrorFunction()  
   })
 }
 
+//signup error display
+const signupErrorFunction = () => {
+  signupError.style.display = 'block'
+    setTimeout  (function() {
+    signupError.style.display = "none"
+  },5000)
+}
+
 const verify = () => {
-  //Access the current user/ last signed in from the auth data
+  //Access the current user/last signed in from the auth data
  const  currentUser = auth.currentUser
  currentUser.sendEmailVerification() .then(function(){
  alert('Verification sent, check your email for the verification process')
@@ -151,13 +156,10 @@ const verify = () => {
  })  
 }
 
-
-
-
 signUpButton.addEventListener('click', formValidation);
 
 
-// 
+// return the signup page  back to the home page
 function goBack(){
     window.history.back();
 }
