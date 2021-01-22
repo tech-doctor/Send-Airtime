@@ -8,7 +8,6 @@
 		<title>SEND AIRTIME</title>
 	</head>
 	<body>
-		<!-- <div class="page"> -->
 			<nav>
 				<div class="navigation">
 					<div class="left-nav">
@@ -28,7 +27,7 @@
                   
                 <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class="nav-content logged-out">SIGN UP</button>
                 
-								<button type="submit" id="logout-button"  class="nav-content logged-in">LOG OUT</button>
+								<button onclick="logOut()"  type="submit" id="logout-button"  class="nav-content logged-in">LOG OUT</button>
 						<!-----------------------------------------OTHER CONTENT----------------------------------------------->
 								<i class="fa fa-bars " id="icon"></i>
 							</li>
@@ -58,11 +57,14 @@
 
             <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class=" logged-out">SIGN UP</button>
 
-            <button type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
+            <button onclick="logOut()"  type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
 					</div>	
 				</div>
 			</nav>
 			<div class="body">
+				<div class="login-status">
+					<p><i class="fas fa-check-circle"></i> Login Successful</p>
+				</div>
 				<div class=" div-one">
 					<div class="left-content">
 						<p>Send Airtime to<br> a Larger Audience with<br> a More Faster,Reliable<br>Airtime service</p>
@@ -107,55 +109,42 @@
 	<div class="overlay">
 	</div>
 	<div class="modal" id="exampleModal"   role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content" id= "content-modal">
-					<div class="form">
-						<!-- <button class="delete">&times</button> -->
-						<h2>Login</h2>
-						<form action="">
-							<p>
-								<label>Email</label>
-								<div class="">
-									<input class="space" id="user" type="email" name="email" placeholder="Enter your email..." required>
-								</div>
-							</p>
-							<p>    
-								<label>Password</label>
-								<div class="input-container">
-									<input class="password-space" id="pin" type="password" name="password" autocomplete="" placeholder="Enter your password..." required><br>
-									<i class="fa fa-eye" id="toggle-password"></i>
-								</div>
-							</p>
-							<a href="#">Forgot Password?</a>
-							<p>
-							<button id="login" type="submit">Login</button>
-							</p>
-							<p>You do not have an account yet? create <a href="SIGN-UP-FORM/signup.html" title="sign up here">Here</a></p>
-						</form> 
-					</div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" id= "content-modal">
+				<div class="form">
+					<!-- <button class="delete">&times</button> -->
+					<h2>Login</h2>
+					<form id="loginForm" action="">
+						<p>
+							<label>Email</label>
+							<div class="">
+								<input class="space" id="email" type="email" name="email" placeholder="Enter your email..." required>
+							</div>
+						</p>
+						<p>    
+							<label>Password</label>
+							<div class="input-container">
+								<input class="password-space" id="password" type="password" name="password" autocomplete="" placeholder="Enter your password..." required><br>
+								<i class="fa fa-eye" id="toggle-password"></i>
+							</div>
+						</p>
+						<a href="#">Forgot Password?</a>
+						<p>
+						<button id="login" type="submit">Login</button>
+						</p>
+						<p>You do not have an account yet? create <a href="SIGN-UP-FORM/signup.html" title="sign up here">Here</a></p>
+					</form> 
 				</div>
+			</div>
 			</div>
     </div>
 
 
-      <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
       
-
-      <script>
-        var firebaseConfig = {
-          apiKey: "AIzaSyDDYf_lwNGEedfBZEZvkFe6FlHYGdOhoS8",
-          authDomain: "disburse-81387.firebaseapp.com",
-          projectId: "disburse-81387",
-          appId: "1:159009687846:web:29daad92b819b263d7d9e7",
-          measurementId: "G-Z1NSE9JET0"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        
-      </script>  -->
-
+      <script src="Auth.js"> </script> 
 			<script src="Airtime.js"></script>
 	</body>
 </html>

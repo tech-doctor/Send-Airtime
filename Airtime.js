@@ -53,17 +53,52 @@ togglePassword.addEventListener('click', function(e) {
 
 /////////////////////////////////////////////////////////////////FIREBASE////////////////////////////////////////////////////////////////////
 
-//const authFunction = () => {
-    //make auth and firestore refrence
-// const auth = firebase.auth();
-// console.log(auth)
-// const db = firebase.firestore();
-// console.log(db)
 
-// //update firestore settings 
-// db.settings({ timestampsInSnapshots: true});
+//logOut users 
+ const logOut  = () =>{
+		auth.signOut().then(cred => {
+			//console.log(cred)
+			if(auth.currentUser !== null){
+				console.log('user logged out')
+	  	}else{			
+				//console.log('user logged out')
+		}	
+		})
+ }
 
-//}
+
+
+ // logIn user 
+const logInForm = document.querySelector('#loginForm')
+const loginstatus = document.querySelector('.body .login-status')
+
+logInForm.addEventListener('submit', (e) => {
+	e.preventDefault()
+	const email = logInForm['email'].value;
+  const password = logInForm['password'].value;
+  loginFunction(email, password)
+	
+})
+
+
+const  loginFunction = (email, password) => {
+	auth.signInWithEmailAndPassword(email, password)
+	.then(cred => {
+			 console.log(cred)
+			 modal.style.display= 'none'
+			 logInForm.reset()
+			 loginstatus.style.display ="block"
+			 loginstatus.style.width = '250px'
+	}).catch(error => {
+		console.log(error)
+	})
+	 //console.log(email, password)
+	// logInForm.reset()
+
+}
+  
+
+
 
 
 

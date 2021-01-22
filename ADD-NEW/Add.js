@@ -44,6 +44,7 @@ import Profile from './Modules/Profile.js'
 import addCustomer from './Modules/Add-customer.js'
 import Wallet from  './Modules/Wallet.js'
 import Dashboard from  './Modules/Dashboard.js'
+//import authFunction from '../Airtime.js'
 
   Profile()
 
@@ -58,11 +59,6 @@ import Dashboard from  './Modules/Dashboard.js'
 
 
   Dashboard()
-
-
-
-
-
 
 
 // const data = {

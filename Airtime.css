@@ -134,6 +134,22 @@ li{
     margin-right: 20px;   
     font-size: 20px; 
 }
+.body .login-status{
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    width: 250px;
+    position: absolute;
+    padding-left: 1em;
+    z-index: 100;
+    right: 0;
+    display: none;
+    animation: success 3s;
+}
+
+/* .body .login-status:hover{
+    width: 400px;
+} */
 
 img{
     width: 50rem;
@@ -206,7 +222,7 @@ img{
     z-index: 1;
 }
 .modal{
-    display: none;
+    /* display: none; */
     z-index: 1;
     position: absolute;
 	overflow: auto;
@@ -252,9 +268,11 @@ img{
 #login{
     padding: 7px;
     background-color:grey;
+    color: white;
     width: 100%;
     font-size: 18px;
-    border: 0px;    
+    border: 0px;   
+    cursor: pointer; 
 }
 
 .input-container{
