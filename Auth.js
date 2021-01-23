@@ -9,6 +9,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   const app = firebase.app()
+  console.log(app)
   const auth = firebase.auth();
   console.log(auth)
   const db = firebase.firestore();

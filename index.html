@@ -46,18 +46,20 @@
 					<div class="side">
             <!-- <p>
             <a href="index.html" class="side-content logged-out">Home</a> 
-          </p> -->
+            </p> -->
             <p>
-            <a href="ADD-NEW/Add.html" class="side-content logged-in">Add Customers</a>  
-          </p>
-          <p>
-            <a href="TRANSACTION/Transaction.html" class="side-content  logged-in">Trasactions</a>   	
-          </p> 
+              <a href="ADD-NEW/Add.html" class="side-content logged-in">Add Customers</a>  
+						</p>
+						<p>
+							<a href="TRANSACTION/Transaction.html" class="side-content  logged-in">Trasactions</a>   	
+						</p> 
+						<div>
             <button  type="submit" class="side-content logged-out" id="login-button">LOG IN</button>
 
             <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class=" logged-out">SIGN UP</button>
 
             <button onclick="logOut()"  type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
+					</div>
 					</div>	
 				</div>
 			</nav>
@@ -114,21 +116,24 @@
 				<div class="form">
 					<!-- <button class="delete">&times</button> -->
 					<h2>Login</h2>
+					<div class="login-error">
+						<p></p>
+					</div>
 					<form id="loginForm" action="">
 						<p>
 							<label>Email</label>
 							<div class="">
-								<input class="space" id="email" type="email" name="email" placeholder="Enter your email..." required>
+								<input class="space " id="email" type="email" name="email" placeholder="Enter your email..." required>
 							</div>
 						</p>
 						<p>    
 							<label>Password</label>
 							<div class="input-container">
-								<input class="password-space" id="password" type="password" name="password" autocomplete="" placeholder="Enter your password..." required><br>
+								<input class="password-space " id="password" type="password" name="password" autocomplete="" placeholder="Enter your password..." required><br>
 								<i class="fa fa-eye" id="toggle-password"></i>
 							</div>
 						</p>
-						<a href="#">Forgot Password?</a>
+						<a onclick="resetPassword()" href="#">Forgot Password? Reset</a>
 						<p>
 						<button id="login" type="submit">Login</button>
 						</p>

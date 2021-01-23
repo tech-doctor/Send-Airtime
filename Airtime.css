@@ -26,8 +26,7 @@ body{
     text-decoration: none;
     margin: 20px;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;   
 }
 
 #signup-button{
@@ -62,12 +61,11 @@ body{
     border-radius: 4px;
     cursor: pointer;
     outline: none;
-
 }
 
 .side-menu {
     height: 80%;
-    width: 0;
+    width: 100%;
     z-index: 1;
     top: 0;
     right: 0;
@@ -81,8 +79,15 @@ body{
 }
 
 .side{
-    text-align: center;
-    
+    text-align: center;   
+}
+.side div{
+    display: grid;
+    width: 120px; 
+    margin:auto; 
+}
+.side button{
+    margin-top: 15px;
 }
 
 .side-top{
@@ -104,7 +109,6 @@ body{
 
 
 .side-menu .btn-close{
-    /* top: 0; */
     font-size: 30px; 
     outline: none; 
     cursor: pointer;  
@@ -139,12 +143,31 @@ li{
     color: white;
     font-size: 18px;
     width: 250px;
-    position: absolute;
+    position: fixed;
     padding-left: 1em;
     z-index: 100;
+    top: 10px;
     right: 0;
     display: none;
-    animation: success 3s;
+    animation: success 1s;
+}
+ .form .login-error p{
+    background-color: rgb(238, 89, 89);
+    color: white;
+    font-size: 15px;
+    padding: 0.5em;
+    text-align: center;
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes success{
+    0%{
+        right: -500px;
+    }
+    100%{
+        right: 0px
+    }
 }
 
 /* .body .login-status:hover{
@@ -253,8 +276,9 @@ img{
     margin: auto;
     padding: 1em;
     box-shadow: 0 0 5px 0  rgb(24, 24, 24);
+    /* box-shadow: 0 0 5px 0  rgb(24, 24, 24); */
     background-color: rgb(255, 255, 255);
-    border-radius: 7px;
+    border-radius: 4px;
     
 }
 
@@ -273,6 +297,9 @@ img{
     font-size: 18px;
     border: 0px;   
     cursor: pointer; 
+}
+#login:hover{
+    background-color:rgb(75, 75, 75);
 }
 
 .input-container{
