@@ -65,7 +65,7 @@ body{
 
 .side-menu {
     height: 80%;
-    width: 100%;
+    width: 0;
     z-index: 1;
     top: 0;
     right: 0;
@@ -132,11 +132,12 @@ li{
 
 .fa-bars{
     color: rgb(105, 105, 105);
-    border: 2px solid rgb(95, 95, 95);
+    /* border: 2px solid rgb(95, 95, 95); */
     padding: 5px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     margin-right: 20px;   
-    font-size: 20px; 
+    font-size: 25px; 
+    cursor: pointer;
 }
 .body .login-status{
     background-color: green;
@@ -202,14 +203,20 @@ img{
 }
 
 
-/* .logged-in{
+.logged-in{
     display: none;
-} */
+}
+.logged-out{
+    display: none;
+}
 
 @media(min-width: 700px) {
     #icon{
         display: none;
     }   
+    .side-menu{
+        display: none;
+    }
 }
 
 
@@ -245,7 +252,7 @@ img{
     z-index: 1;
 }
 .modal{
-    /* display: none; */
+    display: none;
     z-index: 1;
     position: absolute;
 	overflow: auto;
