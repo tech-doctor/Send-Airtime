@@ -222,7 +222,7 @@ img{
 
 @media(max-width:700px) {
     .nav-content{
-        display: none;
+        display: none !important; 
     }
     
     img{

@@ -3,8 +3,7 @@ const sideMenu = document.querySelector(".side-menu");
 const closeMenu = document.getElementById("close-menu")
 const overlay = document.querySelector('.overlay')
 const form = document.querySelector('.form')
-const navLink = document.querySelectorAll('.nav-content')
-
+//const navLink = document.querySelectorAll('.nav-content')
 
 menuIcon.addEventListener("click", () =>{
   sideMenu.style.width = '100%';
@@ -55,12 +54,15 @@ const loggedOutLinks = document.querySelectorAll('.logged-out')
 
 // what should happen on authentication
 auth.onAuthStateChanged(user =>{
-	if (user) {
-		console.log('user logged in')
+	console.log(user)
+	if (user) {	 
 		setUp(user)
 	}
 	else{
-		console.log('user logged out')
+		loginstatus.innerHTML = "Account not verified"
+		loginstatus.style.backgroundColor = "#DC143C"
+		loginstatus.style.padding = '1em'
+		loginstatus.style.fontSize = '15px'
 		setUp()
 	}
 })
@@ -75,8 +77,7 @@ const setUp = (user) => {
 	 }
 	 else{
 		loggedOutLinks.forEach(item => {item.style.display = "inline"})
-	  loggedInLinks.forEach(item => {item.style.display = "none"})
-		
+	    loggedInLinks.forEach(item => {item.style.display = "none"})	
 	 }
 }
 
@@ -86,15 +87,13 @@ const logoutButton = document.querySelectorAll('#logout-button')
 //logOut users 
 const logOut  = () =>{
 	auth.signOut().then(cred => {
-		if(auth.currentUser === null){
-			//console.log('user logged out')
-			loginstatus.innerHTML = "You've logged out successfully"
-			loginstatus.style.display = 'block'
-			loginstatus.style.backgroundColor = 'black'
-			loginstatus.style.padding = '1em'
-			loginstatus.style.fontSize = '15px'
-			timeOut()
-		}
+		loginstatus.innerHTML = "You've logged out successfully"
+		loginstatus.style.display = 'block'
+		loginstatus.style.backgroundColor = 'black'
+		loginstatus.style.padding = '1em'
+		loginstatus.style.fontSize = '15px'
+		timeOut()
+
 	})	
 }
 
@@ -104,7 +103,6 @@ const logOut  = () =>{
 		loginstatus.style.display = "none"
   },3000)	 
 }
-
 
  // logIn user 
 const logInForm = document.querySelector('#loginForm')
@@ -123,6 +121,7 @@ const  loginFunction = (email, password) => {
 	.then(cred => {
 		console.log(cred)
 		modal.style.display= 'none'
+		overlay.style.display = 'none'
 		logInForm.reset()
 		loginstatus.style.display ="block"
 	  timeOut()
@@ -154,15 +153,7 @@ const resetPassword = () => {
 	});	
 }
 
-var x = window.matchMedia("(max-width: 700px)")
 
-if (x.matches) { // If media query matches	
- setTimeout  (() => {
-	 navLink.forEach(navlink => {
-    navlink.style.display = "none"
-	 })	
- },1200)	 
-} 
 
 
 

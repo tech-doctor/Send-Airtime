@@ -148,7 +148,8 @@ const signupErrorFunction = () => {
 const verify = () => {
   //Access the current user/last signed in from the auth data
  const  currentUser = auth.currentUser
- currentUser.sendEmailVerification() .then(function(){
+ auth.useDeviceLanguage();
+ currentUser.sendEmailVerification().then(() => {
  alert('Verification sent, check your email for the verification process')
  verifyAccount.style.display = 'none'
  })
