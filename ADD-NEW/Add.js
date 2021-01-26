@@ -1,6 +1,7 @@
 
 const menuIcon = document.getElementById("bars-icon");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
+const fixedSidebar = document.querySelector('.fixed-sidebar')
 //const fixedSidebar = document.querySelector('.fixed-sidebar');
 
 ///////////////MOBILE SIDEBAR TOGGLE/////////////////////////////////
@@ -13,6 +14,7 @@ document.addEventListener('click', (e) => {
       mobileSidebar.style.display = 'none';
     }   
 })
+
 
 /////////////////////////////////ROUTE CHANGES///////////////////////////////////////
 const  sideClick = document.querySelectorAll(".sidebar-content p");
@@ -37,6 +39,23 @@ sideClick.forEach(sideClick => {
 
   })
 })
+
+
+const sideName =  document.querySelectorAll('.sidebar-content .name')
+//sideName.innerHTML = auth.currentUser.displayName
+auth.onAuthStateChanged(user =>{
+  //console.log(user.displayName)
+  const name = user.displayName
+  let lastName = name.split(' ').slice(-1).join(' ')
+  sideName.forEach( sideName => {
+    sideName.innerHTML = `<i class="fas fa-user side-icon"></i>${lastName}`
+  })
+  
+
+})
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////A D D  C U S T O M E R/////////////////////////////////////////////////////////////////////////

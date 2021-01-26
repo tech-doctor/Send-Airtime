@@ -59,10 +59,10 @@ auth.onAuthStateChanged(user =>{
 		setUp(user)
 	}
 	else{
-		loginstatus.innerHTML = "Account not verified"
-		loginstatus.style.backgroundColor = "#DC143C"
-		loginstatus.style.padding = '1em'
-		loginstatus.style.fontSize = '15px'
+		// loginstatus.innerHTML = "Account not verified"
+		// loginstatus.style.backgroundColor = "#DC143C"
+		// loginstatus.style.padding = '1em'
+		// loginstatus.style.fontSize = '15px'
 		setUp()
 	}
 })
@@ -84,29 +84,18 @@ const setUp = (user) => {
 
 
 const logoutButton = document.querySelectorAll('#logout-button')
-//logOut users 
-const logOut  = () =>{
-	auth.signOut().then(cred => {
-		loginstatus.innerHTML = "You've logged out successfully"
-		loginstatus.style.display = 'block'
-		loginstatus.style.backgroundColor = 'black'
-		loginstatus.style.padding = '1em'
-		loginstatus.style.fontSize = '15px'
-		timeOut()
 
-	})	
-}
 
  //closing display after 3seconds
  const timeOut = () => {
 	setTimeout  (() => {
-		loginstatus.style.display = "none"
+		loginStatus.style.display = "none"
   },3000)	 
 }
 
  // logIn user 
 const logInForm = document.querySelector('#loginForm')
-const loginstatus = document.querySelector('.body .login-status')
+const loginStatus = document.querySelector('.body .login-status')
 const loginError = document.querySelector('.form .login-error p')
 
 logInForm.addEventListener('submit', (e) => {
@@ -123,7 +112,10 @@ const  loginFunction = (email, password) => {
 		modal.style.display= 'none'
 		overlay.style.display = 'none'
 		logInForm.reset()
-		loginstatus.style.display ="block"
+		loginStatus.innerHTML = `<p><i class="fas fa-check-circle"></i>Login Successful</p>`
+		loginStatus.style.backgroundColor = 'green'
+		// loginStatus.style.fontSize = '18px'
+		loginStatus.style.display ="block"
 	  timeOut()
 	}).catch(error => {
 		console.log(error)
@@ -140,6 +132,20 @@ const  loginFunction = (email, password) => {
 		loginError.style.display = "block"
 		
 	})
+}
+
+
+const logoutStatus = document.querySelector('.body .logout-status')
+//logOut users 
+const logOut  = () =>{
+	auth.signOut().then(cred => {
+		loginStatus.innerHTML = "You've logged out successfully"
+		loginStatus.style.display = 'block'
+		loginStatus.style.backgroundColor = 'black'
+		loginStatus.style.fontSize = '15px'
+		loginStatus.style.padding = '1em'
+		timeOut()
+	})	
 }
 
 //////Password Reset function

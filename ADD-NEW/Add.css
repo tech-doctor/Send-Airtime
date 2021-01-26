@@ -108,13 +108,13 @@ li button{
 
 }
 
-/* .display:not(:nth-child(2)){
+.display:not(:nth-child(3)){
 	display: none;
-} */
+}
 
-.display:not(:last-child){
+/* .display:not(:last-child){
 	display: none
-  }
+  } */
 
 .sidebar-content{
   padding-top: 2em;
@@ -145,6 +145,8 @@ li button{
 	}
 	.fixed-sidebar{
 			display: none;
+		/* width: 0px;
+	    transition:  width 0.5s; */
 	}
 	.hidden{
 			display: none;

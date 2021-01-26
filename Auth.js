@@ -13,7 +13,7 @@ var firebaseConfig = {
   const auth = firebase.auth();
   console.log(auth)
   const db = firebase.firestore();
- //console.log(db)
+ console.log(db)
 
  //update firestore settings 
   db.settings({ timestampsInSnapshots: true});

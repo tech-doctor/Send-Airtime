@@ -24,12 +24,7 @@ checkBox.onchange =  function()  {
 };
 
 /////////////////////////////////////////////////////////////////////////////////////AUTHTENTICATION///////////////////////////////////////////////////////////////////////////
-// initializing the  Authentication methods.
-const app = firebase.app()
-const auth = firebase.auth();
-const db = firebase.firestore()
-//update firestore settings 
-db.settings({ timestampsInSnapshots: true});
+
 
 /// Authentication function  with Google signup
 const googleLogin = () => {

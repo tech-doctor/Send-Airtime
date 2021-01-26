@@ -25,10 +25,10 @@
 			<div class="fixed-sidebar ">
 				<h1 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h1>
 				<div class="sidebar-content">
-					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i>NAME</p>
+					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i></p>
 					<p class="sidebar dashboard " data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar add-customer " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet active " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar add-customer active " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -38,8 +38,8 @@
 				<div class=" sidebar-content">
 					<p class="sidebar name  " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar  add-customer   "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet active"  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar  add-customer active  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
@@ -69,9 +69,8 @@
 						</div>
 						<div class="div-2">
 							<p><span class="heading">Bank:</span><span class="detail bank"> polaris bank</span><span> -----------------------</span></p>
-        <p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i class="far fa-copy"> copy</i></p> 
-				<!-- <p class="copy-success" >COPIED!</p> -->
-
+							<p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i class="far fa-copy"> copy</i></p> 
+							<!-- <p class="copy-success" >COPIED!</p> -->
 						</div>
 						<div class="div-3">
 							<div class="transaction-div">
@@ -251,7 +250,11 @@
 					</div>
 			  </div>	
 		  </div>
-	  </div>
+		</div>
+		  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+		<script src="../Auth.js"> </script> 
 		<script  type="module" src="Add.js"></script>
 	</body>
 </html>

@@ -42,6 +42,12 @@
         <p class="signup-success">You've signed up</p>
         <p class="validation-error">Error! make sure all form feild is filled</p>
         <p>
+          <label>FULL NAME</label><br>
+          <div class="input-container">
+            <input class="space" id="name"  type="text" name="name" placeholder="Your full-name..." required>
+          </div>
+        </p>
+        <p>
           <label>EMAIL</label><br>
           <div class="input-container">
             <input class="space" id="email"  type="email" name="email" placeholder="Your email..." required>
@@ -78,17 +84,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script> -->
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyDDYf_lwNGEedfBZEZvkFe6FlHYGdOhoS8",
-        authDomain: "disburse-81387.firebaseapp.com",
-        projectId: "disburse-81387",
-        appId: "1:159009687846:web:29daad92b819b263d7d9e7",
-        measurementId: "G-Z1NSE9JET0"
-      };
-      // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);  
-    </script> 
+    
+    <script src="../Auth.js"> </script> 
     <script src="signup.js"></script>
   </body>
 </html>
