@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>SEND AIRTIME</title>
+    <title>SEND AIRTIME</title>
 		<link rel="stylesheet" href="Add.css">
 		<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
 	</head>
@@ -27,8 +27,8 @@
 				<div class="sidebar-content">
 					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i></p>
 					<p class="sidebar dashboard " data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar add-customer active " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar add-customer  " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet active  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -38,12 +38,16 @@
 				<div class=" sidebar-content">
 					<p class="sidebar name  " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar  add-customer active  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar  add-customer  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet active "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
 			<div class="displaySection">
+        <div class="loading-overlay">
+          <div class="loading"></div>
+        </div>
+        
 				<div class="display" data-number="1">
             <h2>Name details</h2>
 				</div>
@@ -218,7 +222,10 @@
 							</div>
 						</div>
 						<div class="main-view">
-							<div class="flex-view">
+              <div class="wallet-success">
+                
+              </div>
+							<!-- <div class="flex-view">
                 <div class="wallet-btn-div">
                   <div class= "wallet-balance">
                     <p class="heading">Wallet balance:</p>
@@ -245,7 +252,7 @@
               <div class="message-div">
                 <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
                 <p class="phone-number"> Phone-number: <span id="wallet-number"> 08067883093 </span><i class="far fa-copy"> copy</i></p>
-              </div>
+              </div> -->
 						</div>
 					</div>
 			  </div>	
