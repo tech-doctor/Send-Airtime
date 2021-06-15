@@ -145,7 +145,7 @@ const walletSuccess = document.querySelector('.wallet-success')
    const url = "https://sandbox.wallets.africa/wallet/generate";
   //const url = "https://sandbox.wallets.africa/self/balance";
     const publicKey = "uvjqzm5xl6bw";
-    const proxy = "https://cors-anywhere.herokuapp.com/"
+    const proxy = "https://mighty-island-92084.herokuapp.com/"
     const headers = {
     'Content-Type' : 'application/json',
     'Authorization': `Bearer ${publicKey}`
@@ -205,7 +205,7 @@ const walletSuccess = document.querySelector('.wallet-success')
 
       const url = "https://sandbox.wallets.africa/self/balance";
       const publicKey = "uvjqzm5xl6bw";
-      const proxy = "https://cors-anywhere.herokuapp.com/"
+      const proxy = "https://mighty-island-92084.herokuapp.com/"
       const headers = {
       'Content-Type' : 'application/json',
       'Authorization': `Bearer ${publicKey}`
@@ -262,7 +262,7 @@ fundForm.addEventListener ('submit', (e) => {
    //const url = "https://sandbox.wallets.africa/self/balance";
    const url = "https://sandbox.wallets.africa/wallet/credit";
     const publicKey = "uvjqzm5xl6bw";
-    const proxy = "https://cors-anywhere.herokuapp.com/"
+    const proxy = "https://mighty-island-92084.herokuapp.com/"
     const headers = {
     'Content-Type' : 'application/json',
     'Authorization': `Bearer ${publicKey}`
