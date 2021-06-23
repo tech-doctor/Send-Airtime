@@ -208,7 +208,7 @@ img{
     font-stretch: extra-expanded ;
 }
 #get-started{
-    padding: 10px 15px 7px 10px;
+    padding: 10px 15px 7px 10px; 
     background-color: rgb(60, 139, 139);
     color: white;
     border-radius: 6px;
@@ -217,12 +217,12 @@ img{
 }
 
 
-.logged-in{
+/* .logged-in{
     display: none;
 }
 .logged-out{
     display: none;
-}
+} */
 
 @media(min-width: 700px) {
     #icon{

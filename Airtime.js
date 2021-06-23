@@ -54,44 +54,43 @@ const loggedOutLinks = document.querySelectorAll('.logged-out')
 
 // what should happen on authentication
 auth.onAuthStateChanged(user =>{
-	console.log(user)
+//	console.log(user)
 	if (user) {	 
-		setUp(user)
+	//	setUp(user)
 	}
 	else{
 		// loginstatus.innerHTML = "Account not verified"
 		// loginstatus.style.backgroundColor = "#DC143C"
 		// loginstatus.style.padding = '1em'
 		// loginstatus.style.fontSize = '15px'
-		setUp()
+	//	setUp()
 	}
 })
 
 
 //setup UI function on  auth changes
 
-const setUp = (user) => {
-	 if(user){
-		 loggedInLinks.forEach(item => {item.style.display = "inline"})
-		 loggedOutLinks.forEach(item => {item.style.display = "none"})
-	 }
-	 else{
-		loggedOutLinks.forEach(item => {item.style.display = "inline"})
-	    loggedInLinks.forEach(item => {item.style.display = "none"})	
-	 }
-}
+// const setUp = (user) => {
+// 	 if(user){
+// 		 loggedInLinks.forEach(item => {item.style.display = "inline"})
+// 		 loggedOutLinks.forEach(item => {item.style.display = "none"})
+// 	 }
+// 	 else{
+// 		loggedOutLinks.forEach(item => {item.style.display = "inline"})
+// 	    loggedInLinks.forEach(item => {item.style.display = "none"})	
+// 	 }
+// }
 
 
 
 const logoutButton = document.querySelectorAll('#logout-button')
-
-
  //closing display after 3seconds
  const timeOut = () => {
 	setTimeout  (() => {
 		loginStatus.style.display = "none"
   },3000)	 
 }
+
 
  // logIn user 
 const logInForm = document.querySelector('#loginForm')
@@ -105,6 +104,7 @@ logInForm.addEventListener('submit', (e) => {
   loginFunction(email, password)	
 })
 
+//login validation
 const  loginFunction = (email, password) => {
 	auth.signInWithEmailAndPassword(email, password)
 	.then(cred => {
@@ -129,14 +129,13 @@ const  loginFunction = (email, password) => {
 			default:
 				loginError.innerHTML = "something went wrong, please try again!"
 		}
-		loginError.style.display = "block"
-		
+		loginError.style.display = "block"	
 	})
 }
 
 
+///what should be displayed when the users logged out.
 const logoutStatus = document.querySelector('.body .logout-status')
-//logOut users 
 const logOut  = () =>{
 	auth.signOut().then(cred => {
 		loginStatus.innerHTML = "You've logged out successfully"
@@ -150,7 +149,7 @@ const logOut  = () =>{
 
 //////Password Reset function
 const resetPassword = () => {
-		const emailValue = document.querySelector('#email').value
+	const emailValue = document.querySelector('#email').value
 	console.log(emailValue)
 	auth.sendPasswordResetEmail(emailValue).then(() => {
 		alert('sent')
@@ -162,6 +161,33 @@ const resetPassword = () => {
 
 
 
+const data = {
+    // "Code": "airtel",
+    // "Amount": 100,
+    // "PhoneNumber": "08129366772",
+	"Currency": "NGN",
+    "SecretKey": "hfucj5jatq8h",
+	}
+ 
 
 
+ 
+  //const url = "https://sandbox.wallets.africa/bills/airtime/purchase"
+  const url = "https://sandbox.wallets.africa/self/balance"
+  const publicKey = "uvjqzm5xl6bw";
+	const proxy = "https://mighty-island-92084.herokuapp.com/"
+	const headers = {
+		'Content-Type' : 'application/json',
+		'Authorization': `Bearer ${publicKey}`
+		}
 
+	fetch(proxy +  url, {
+    method: "POST",
+    headers: headers,
+    body : JSON.stringify(data),
+	})
+
+
+  .then(result => result.json())
+  .then(resp => console.log(resp))
+  .catch(err => console.log('Error :', err))

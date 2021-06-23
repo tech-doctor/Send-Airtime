@@ -13,6 +13,7 @@ for(let i = 0; i < togglePassword.length; i++){
   })   
 }
 
+
 // when the checkbox is clicked
 checkBox.onchange =  function()  {
   signUpButton.disabled = !this.checked;

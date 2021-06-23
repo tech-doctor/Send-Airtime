@@ -11,12 +11,36 @@
 	<nav>
 		<div class="navigation">
 			<div class="left-nav">
-					<h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
+				<h2 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h2> 
 			</div>
 			<div class="right-nav"></div>
 		</div>
 	</nav>
-	<div class="content"></div>
+	<div class="content">
+    <div class="header">
+      <h1>Transaction</h1> 
+    </div>
+    
+    <div class="table">
+      <table cellspacing="35px" style="width:100%" id="t01">
+        <thead>
+          <th>S/N</th>
+          <th>Currency</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Narration</th>
+          <th>Date</th>
+      </thead>
+      <tbody class="tbody"> </tbody>
+      </table> 	
+    </div>
+    <div class="loading-overlay">
+      <div class="loading"></div>
+    </div>	
+    <div class="back-tryAgain">
+      
+    </div>
+  </div>
     <script src="Transaction.js"></script>
 </body>
 </html>

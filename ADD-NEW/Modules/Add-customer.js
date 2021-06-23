@@ -1,9 +1,10 @@
 const addCustomer = () =>{
   const addRow = document.getElementById("Add-row");
   const newForm = document.querySelector('.new-form');
+  const addCustomer = document.querySelector('#Add-intern');
   
-  const  addNewForm = () => {
-    const result = `
+  // const  newFormFunction = () => {
+    const result =  `
     <div class="each-form">
     <hr>
       <input class="form" id="full-name" type="text" name="name" placeholder="Full Name..">
@@ -21,56 +22,67 @@ const addCustomer = () =>{
       </select>
       <br>
     </div>`
-    return result;
-  }
-  
+   // let resultList = []
+  //   return result;
+  // }
+
+  newForm.innerHTML = result
+ 
   
 
   //////Add more formfield
   addRow.addEventListener('click', (event) => {
     event.preventDefault()
-    newForm.innerHTML += addNewForm();
-    getForm()  
+    //resultList.push(result)
+    newForm.innerHTML += result;
   })
-  
-  function getForm(){
-    const eachForm = document.querySelectorAll('.each-form')  
     
-  }
+  //})
+  
+  // function getForm(){
+  //   const eachForm = document.querySelectorAll('.each-form')  
+    
+  // }
   
   ///Get Input value
   function getInputVal(){
-    const  fullName = document.querySelector('#full-name');
-    const  track =  document.querySelector('.Add-new #track').value;
-    const  mobileNumber = document.querySelector('.Add-new #mobileNumber').value;
-    const  network = document.querySelector('.Add-new #network').value; 
+    const  fullName = document.querySelectorAll('#full-name');
+    const  track =  document.querySelectorAll('.Add-new #track');
+    const  mobileNumber = document.querySelectorAll('.Add-new #mobileNumber');
+    const  network = document.querySelectorAll('.Add-new #network'); 
    // getForm()
-    //console.log(eachForm.length)
-   //  return  {
-    //   fullName,
-    //   track,
-    //   mobileNumber,
-    //   network
-     //}
-     console.log(fullName.value)
 
+    //  const formArray = [
+    //    {
+    //     fullName : fullName.value,
+    //     track: 'frontend',
+    //     mobileNumber: '090',
+    //     network: 'MTN'
+    //    }
+    //   ];
+
+    const formArray = [fullName, track, mobileNumber,network]
+        
+      formArray.forEach(form => {
+        console.log(form.value)
+      })
+
+    //  //console.log()
+
+    //  fullName.forEach(name => {
+    //    console.log(name.value)
+    //  });
+
+     //console.log(fullName, track, mobileNumber, network)
   }
 
   //Add customer
   //const formField = document.querySelector('.formField')
-  const addCustomer = document.querySelector('#Add-intern')
-
-  // const logFunction = (e) => {
-  //   e.preventDefault();
-  //   console.log(fullName)
-  // }
+  
 
   addCustomer.addEventListener('click',  (e) => {
     e.preventDefault();
-   // console.log('log')
-    //getInputVal()
-    //console.log(fullName)
-
+    getInputVal()
   })
    
     //getInputVal(fullName, track, mobileNumber, network);
@@ -81,33 +93,36 @@ const addCustomer = () =>{
     // postAirtimeData()  
 
   /////Send Data to Airtime API
-  function postAirtimeData(){
-    const data = {
-      Code: "MTN",
-      Amount: 200,
-      PhoneNumber: '08129366772',
-      SecretKey: "hfucj5jatq8h",
-    }
 
-    const url = "https://sandbox.wallets.africa/bills/airtime/purchase"
-    const publicKey = "uvjqzm5xl6bw";
-    const proxy = "https://cors-anywhere.herokuapp.com/"
-    const headers = {
-      'Content-Type' : 'application/json',
-      'Authorization': `Bearer ${publicKey}`
-    }
-    
-    fetch(proxy + url, {
-      method: "POST",
-      headers: headers,
-      body : JSON.stringify(data),
-      redirect:"follow" 
-    })
-    
-    .then(result => result.json())
-    .then(resp => console.log(resp))
-    .catch(err => console.log('Error : ',err))
-  }     
+  // function postAirtimeData(){
+    // const data = {
+    //   "Code": "airtel",
+    //   "Amount": 100,
+    //   "PhoneNumber": "07068260000",
+    //   "SecretKey": "hfucj5jatq8h"
+    // }
+   
+  
+  
+   
+    // const url = "https://sandbox.wallets.africa/bills/airtime/purchase"
+    // const publicKey = "uvjqzm5xl6bw";
+    // const proxy = "https://mighty-island-92084.herokuapp.com/"
+    // const headers = {
+    //   'Content-Type' : 'application/json',
+    //   'Authorization': `Bearer ${publicKey}`
+    //   }
+  
+    // fetch(proxy +  url, {
+    //   method: "POST",
+    //   headers: headers,
+    //   body : JSON.stringify(data),
+    // })
+  
+  
+    // .then(result => result.json())
+    // .then(resp => console.log(resp))
+    // .catch(err => console.log('Error :', err))
 }
 
 export default addCustomer;

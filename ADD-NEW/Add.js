@@ -6,13 +6,13 @@ const fixedSidebar = document.querySelector('.fixed-sidebar')
 
 ///////////////MOBILE SIDEBAR TOGGLE/////////////////////////////////
 document.addEventListener('click', (e) => {
-    if(menuIcon.contains(e.target)) {
-      mobileSidebar.style.display = 'block';
-    } else if(mobileSidebar.contains(e.target)) {
-      mobileSidebar.style.display = 'block';
-    } else{
-      mobileSidebar.style.display = 'none';
-    }   
+  if(menuIcon.contains(e.target)) {
+    mobileSidebar.style.display = 'block';
+  } else if(mobileSidebar.contains(e.target)) {
+    mobileSidebar.style.display = 'block';
+  } else{
+    mobileSidebar.style.display = 'none';
+  }   
 })
 
 
@@ -43,16 +43,16 @@ sideClick.forEach(sideClick => {
 
 const sideName =  document.querySelectorAll('.sidebar-content .name')
 //sideName.innerHTML = auth.currentUser.displayName
-auth.onAuthStateChanged(user =>{
-  //console.log(user.displayName)
-  const name = user.displayName
-  let lastName = name.split(' ').slice(-1).join(' ')
-  sideName.forEach( sideName => {
-    sideName.innerHTML = `<i class="fas fa-user side-icon"></i>${lastName}`
-  })
+// auth.onAuthStateChanged(user =>{
+//   //console.log(user.displayName)
+//   const name = user.displayName
+//   let lastName = name.split(' ').slice(-1).join(' ')
+//   sideName.forEach( sideName => {
+//     sideName.innerHTML = `<i class="fas fa-user side-icon"></i>${lastName}`
+//   })
   
 
-})
+// })
 
 
 

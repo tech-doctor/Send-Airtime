@@ -11,17 +11,38 @@ const Wallet = () =>{
 // })
 
 // }
-db.collection('create').get().then((snapshot) => {
-  snapshot.forEach(doc => {
-    const {PhoneNumber} = doc.data()
-   console.log(PhoneNumber)
-   updateWallet(PhoneNumber)
-  })   
+// const getNumber =  () => {
+  db.collection('create').get().then((snapshot) => {
+    
+    snapshot.forEach(doc => {
+      const PhoneNumber = doc.data().PhoneNumber;
+       updateWallet(PhoneNumber)
+    })  
+  
 })
+  
+//}
+
+
+
   
 
   const  updateWallet = (PhoneNumber) => {
-    
+   // getNumber() 
+  // getNumber()
+  // console.log(PhoneNumber)
+
+  //setTimeout  (() => {
+    // if(PhoneNumber){
+    //   console.log(PhoneNumber)
+    // }
+      PhoneNumber? console.log(PhoneNumber): ''
+      // if(PhoneNumber){
+      //   const  num =  56
+      // } else{
+      //   const  num = ''
+      // }
+   
     const result = `
     <div class="flex-view">
       <div class="wallet-btn-div">
@@ -39,20 +60,19 @@ db.collection('create').get().then((snapshot) => {
       </div>
       <div class="self-balance">
         <p class="heading">Bank balance:</p>
-        <p class="details"> 
+        <p class="details">
           <i class="fas fa-money-check-alt"></i>
           <br><br>Your  bank balance will be displayed here <br>once you create a wallet
         </p>
-        <p class="balance">#1588394.00</p>
-        <p class="currency">NGN</p>
+        
       </div>
     </div>	
     <div class="message-div">
       <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
-      <p class="phone-number"> Phone-number: <span id="number">${PhoneNumber}  <i class="far fa-copy"> copy</i></span></p>
-      
-      </div> ` 
+      <p class="phone-number"> Phone-number: <span id="wallet-number"> ${12} </span><i class="far fa-copy"> copy</i></p>
+      </div> `  
     return result;
+  
   }
 
  mainView.innerHTML += updateWallet()
@@ -312,7 +332,6 @@ fundForm.addEventListener ('submit', (e) => {
     }).then(()=> {
       loadingOverlay.style.display = 'none' 
     })
-  
   }
 
   

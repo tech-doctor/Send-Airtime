@@ -27,8 +27,8 @@
 				<div class="sidebar-content">
 					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i></p>
 					<p class="sidebar dashboard " data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar add-customer  " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet active  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar add-customer active   " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
 			</div>
@@ -38,8 +38,8 @@
 				<div class=" sidebar-content">
 					<p class="sidebar name  " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar  add-customer  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
-					<p class="sidebar  wallet active "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
+					<p class="sidebar  add-customer active  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  wallet "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
 			</div>
@@ -47,7 +47,6 @@
         <div class="loading-overlay">
           <div class="loading"></div>
         </div>
-        
 				<div class="display" data-number="1">
             <h2>Name details</h2>
 				</div>
@@ -78,77 +77,7 @@
 						</div>
 						<div class="div-3">
 							<div class="transaction-div">
-								<div class="transaction-button">
-									<h3>Transaction</h3>
-								  <button>View all</button>
-								</div>
-								<div class="transaction-table">
-									<div class="transaction-initial">
-										<p>No Transactions Yet!</p>
-									</div>
-									<table cellspacing="35px" style="width:100%" id="t01">
-										<thead>
-											 <th>S/N</th>
-											 <th>Currency</th>
-											 <th>Amount</th>
-											 <th id="category">Category</th>
-											 <th id="narration">Narration</th>
-											 <th>Date</th>
-										</thead>
-									 <tbody>
-										<tr>
-											<td>1</td>
-											<td>
-												<div class="basic-info">
-													<p>NGN</p>
-												</div>
-											</td>
-											<td>25</td>
-											<td id="categorate">Bank Transfer Charges</td>
-											<td id="narrate">
-													Transaction Charge for Bank Transfer
-											</td>
-											<td>
-													Date
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>
-													<div class="basic-info">
-															<p>NGN</p>
-												</div>
-											</td>
-											<td>25</td>
-											<td id="categorate">Bank Transfer Charges</td>
-											<td id="narrate">
-													Transaction Charge for Bank Transfer
-											</td>
-											<td>
-													Date
-											</td>
-									 </tr>
-									 <tr>
-										<td>3</td>
-										<td>
-												<div class="basic-info">
-														<p>NGN</p>
-											</div>
-										</td>
-		
-										<td>25</td>
-										<td id="categorate">Bank Transfer Charges</td>
-										<td id="narrate">
-												Transaction Charge for Bank Transfer
-										</td>
-										<td>
-												Date
-										</td>
-									 </tr>
-									 
-									 </tbody>
-								</table> 
-								</div>	
+                <!-- Transaction table content -->
 							</div>
 						</div>
 					</div>
@@ -160,22 +89,7 @@
 							<p>Fill all the input fields, else entry will not be added </p>
 							<form>
 								<div class="new-form">
-									<div class="each-form">
-										<input class="form" id="full-name" type="text" name="name" placeholder="Full Name..">
-										<br>
-										<input class="form" type="text" id="track" name="track"  placeholder="Track">
-										<br>
-										<input class="form" type="number" id="mobileNumber" name="mobile" placeholder="Mobile Number">
-										<br>
-										<select class="select" name="network" id="network">
-											<option>Select Network</option>
-											<option>GLO</option>
-											<option>AIRTEL</option>
-											<option>MTN</option>
-											<option>9MOBILE</option>
-										</select>
-										<br>
-									</div>
+									<!-- Add-Customer content -->
 								</div>
                 <!-- <button onclick="window.location.href='../SEND AIRTIME/send.html'" type="submit" id="Add-intern">Add Customer</button> -->
                 <button type="submit" id="Add-intern">Add Customer</button>
@@ -221,38 +135,13 @@
 								</div>
 							</div>
 						</div>
+            <!-- Main wallet view -->
 						<div class="main-view">
-              <div class="wallet-success">
-                
+              <!-- display when wallet creation and funding is successful-->
+              <div class="wallet-success"></div>
+              <div>
+                <!-- wallet page -->
               </div>
-							<!-- <div class="flex-view">
-                <div class="wallet-btn-div">
-                  <div class= "wallet-balance">
-                    <p class="heading">Wallet balance:</p>
-                    <div class="details">
-                      <p class="balance">00.00</p>
-                      <p class = "currency">NGN.</p>
-                    </div>
-                  </div>
-                  <div class="button-div">
-                    <button class="create">Create Wallet</button>
-                    <button class="fund">Fund wallet</button>
-                  </div>
-                </div>
-								<div class="self-balance">
-                  <p class="heading">Bank balance:</p>
-									<p class="details"> 
-                    <i class="fas fa-money-check-alt"></i>
-										<br><br>Your  bank balance will be displayed here <br>once you create a wallet
-									</p>
-									<p class="balance">#1588394.00</p>
-									<p class="currency">NGN</p>
-                </div>
-              </div>	
-              <div class="message-div">
-                <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
-                <p class="phone-number"> Phone-number: <span id="wallet-number"> 08067883093 </span><i class="far fa-copy"> copy</i></p>
-              </div> -->
 						</div>
 					</div>
 			  </div>	

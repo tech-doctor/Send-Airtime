@@ -8,59 +8,59 @@
 		<title>SEND AIRTIME</title>
 	</head>
 	<body>
-			<nav>
-				<div class="navigation">
-					<div class="left-nav">
-						<h1 class="disburse" onclick="window.location.href='index.html'">Disburse.</h1>
-					</div>
-					<div class="right-nav">
-						<ul>
-							<li>
-                <!-- <a href="index.html" class="nav-content logged-out">Home</a> -->
-                
-                <a href="ADD-NEW/Add.html" class="nav-content logged-in">Add Cutomers</a>
-                
-                <a href="TRANSACTION/Transaction.html" class="nav-content logged-in">Trasactions</a>
-                
-								<button type="submit" class="nav-content  logged-out" id="login-button" 
-                  data-toggle="modal" data-target="#MyModal" data-backdrop="static">LOG IN</button>
-                  
-                <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class="nav-content logged-out">SIGN UP</button>
-                
-								<button onclick="logOut()"  type="submit" id="logout-button"  class="nav-content logged-in">LOG OUT</button>
-						<!-----------------------------------------OTHER CONTENT----------------------------------------------->
-								<i class="fa fa-bars " id="icon"></i>
-							</li>
-						</ul>       
-					</div>
+    <nav>
+      <div class="navigation">
+        <div class="left-nav">
+          <h1 class="disburse" onclick="window.location.href='index.html'">Disburse.</h1>
         </div>
-				<div class="side-menu">
-          <div class="side-top">
-            <div class="side-heading">
-              <h2>Disburse.</h2>
-            </div>
-            <div class="close">
-              <button id="close-menu"class="btn-close">&times;</button>
-            </div>
+        <div class="right-nav">
+          <ul>
+            <li>
+              <!-- <a href="index.html" class="nav-content logged-out">Home</a> -->
+              <a href="ADD-NEW/Add.html" class="nav-content logged-in">Add Cutomers</a>
+              
+              <a href="TRANSACTION/Transaction.html" class="nav-content logged-in">Trasactions</a>
+              
+              <button type="submit" class="nav-content  logged-out" id="login-button" 
+                data-toggle="modal" data-target="#MyModal" data-backdrop="static">LOG IN</button>
+                
+              <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class="nav-content logged-out">SIGN UP</button>
+              
+              <button onclick="logOut()"  type="submit" id="logout-button"  class="nav-content logged-in">LOG OUT</button>
+          <!-----------------------------------------OTHER CONTENT----------------------------------------------->
+              <i class="fa fa-bars " id="icon"></i>
+            </li>
+          </ul>       
+        </div>
+      </div>
+      <div class="side-menu">
+        <div class="side-top">
+
+          <div class="side-heading">
+            <h2>Disburse.</h2>
           </div>
-					<div class="side">
-            <!-- <p>
-            <a href="index.html" class="side-content logged-out">Home</a> 
-            </p> -->
-            <p>
-              <a href="ADD-NEW/Add.html" class="side-content logged-in">Add Customers</a>  
-						</p>
-						<p>
-							<a href="TRANSACTION/Transaction.html" class="side-content  logged-in">Trasactions</a>   	
-						</p> 
-						<div>
-							<button  type="submit" class="side-content logged-out" id="login-button">LOG IN</button>
-							<button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class=" logged-out">SIGN UP</button>
-							<button onclick="logOut()"  type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
-					</div>
-					</div>	
-				</div>
-			</nav>
+          <div class="close">
+            <button id="close-menu"class="btn-close">&times;</button>
+          </div>
+        </div>
+        <div class="side">
+          <!-- <p>
+          <a href="index.html" class="side-content logged-out">Home</a> 
+          </p> -->
+          <p>
+            <a href="ADD-NEW/Add.html" class="side-content logged-in">Add Customers</a>  
+          </p>
+          <p>
+            <a href="TRANSACTION/Transaction.html" class="side-content  logged-in">Trasactions</a>   	
+          </p> 
+          <div>
+            <button  type="submit" class="side-content logged-out" id="login-button">LOG IN</button>
+            <button onclick = "location.href = 'SIGN-UP-FORM/signup.html'" type="submit" id="signup-button"  class=" logged-out">SIGN UP</button>
+            <button onclick="logOut()"  type="submit" id="logout-button"  class=" logged-in">LOG OUT</button>
+        </div>
+        </div>	
+      </div>
+    </nav>
 			<div class="body">
 				<div class="login-status  logout-status">
 					<!-- login/logout status content (as the case my be)-->
@@ -78,8 +78,8 @@
 			<div class="footer">
 				<footer>
 					<div class="footer-1">
-                       <div class="section-a">
-						 <p>Products</p>
+            <div class="section-a">
+						<p>Products</p>
 						 <li><a href="#">Airtime service</a></li>
 						 <li><a href="#">Fund wallet</a></li>
 					   </div>
@@ -103,8 +103,6 @@
 				</footer>
 			</div>
 		<!-- </div> -->
-    
-
 	<!-------------------------- MAIN MODAL CONTENT------------------------------------->
 	<div class="overlay">
 	</div>
@@ -141,8 +139,6 @@
 			</div>
 			</div>
     </div>
-
-
       <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
