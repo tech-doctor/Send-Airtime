@@ -42,7 +42,7 @@ body{
 	margin-left: 250px;
 }
 
-.right-nav{
+.right-nav ul li{
 	display: flex;
 	align-items: center;    
 }
@@ -190,8 +190,8 @@ li button{
 /* //////////////////////////////////////////////////////////P R O F I L E////////////////////////////////////////////////////////////////////////// */
 
 .displaySection > .display > .first-div{
-  background-color: rgb(241, 241, 241);
-  height: 100vh;
+  background-color: rgb(243, 242, 242);
+  height: 120vh;
   width: 100%;
   position: absolute;
   
@@ -205,9 +205,41 @@ li button{
  border: 1px solid black; 
 }
 
+.displaySection > .display > .first-div .profile-div .update-profile {
+	width: 50%;
+	margin: auto;
+	background-color: blanchedalmond;
+}
+
+.displaySection > .display > .first-div .profile-div .update-profile > .update-form > form >input {
+	padding-left: 10px;
+	padding-bottom: 10px;
+	height: 20px;
+	border: 1px solid rgb(133, 133, 133);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+
+.displaySection > .display > .first-div .profile-div .update-form form{
+	display: flex;
+	flex-direction: column;
+}
+
+.displaySection > .display > .first-div .profile-div .update-profile form button {
+	position: relative;
+	width: 100px;
+	left: 0px;
+	
+	
+}
+
+
 .displaySection > .display > .first-div .profile-div .flex-div{
   display: flex;
-  flex: content;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -216,15 +248,57 @@ li button{
 
  .displaySection > .display > .first-div .profile-div .flex-div .left-div {
   border: 1px solid black;
+  flex: 0.3;
  }
+
+ .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar {
+  border: 1px solid black;
+  width: 100%;
+  position: relative;
+ }
+
+ .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	top: 68%;
+	left: 86%;
+	font-size: 15px;
+	box-shadow: 0px 0px 6px 0px;
+	padding: 5px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+ .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar img {
+ 
+  width: 200px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
 
  .displaySection > .display > .first-div .profile-div .flex-div .right-div {
   border: 1px solid black;
+  flex: 0.3;
  }
 
 
 
-
+@media(min-width: 1200px){
+	.displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
+		top: 70%;
+		left: 70%;
+	}
+}
 
 
 
@@ -249,15 +323,17 @@ li button{
   font-size: 18px;
 }
 
-img{
+ .customer-image{
 	width: 15rem;
-	margin-top: 40px;
-   
+	margin-top: 40px;   
 }
 
 @media(max-width:800px) {
-	img{
+	.customer-image{
 		display: none;
+	}
+	.displaySection > .display > .first-div .profile-div .update-profile {
+		width: 100%;
 	}
 }
 
@@ -326,7 +402,7 @@ img{
 		width: 35%;
 		cursor: pointer;
 	}
-	img{
+	.customer-image{
 		width: 22rem;
 		margin-top: 40px;  
 	}
