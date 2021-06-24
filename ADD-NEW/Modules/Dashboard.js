@@ -103,8 +103,6 @@ const Dashboard = () => {
    console.log('dashboard')
   copyFunction()
   transactionContent.innerHTML += transactionTable()
-
-  
   }
 
 export default Dashboard

@@ -25,9 +25,9 @@
 			<div class="fixed-sidebar ">
 				<h1 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h1>
 				<div class="sidebar-content">
-					<p class="sidebar name " data-number="1"><i class="fas fa-user side-icon"></i></p>
+					<p class="sidebar name active " data-number="1"><i class="fas fa-user side-icon"></i>NAME</p>
 					<p class="sidebar dashboard " data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar add-customer active   " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar add-customer    " data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
 					<p class="sidebar  wallet  " data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p>  -->
 				</div> 
@@ -36,9 +36,9 @@
 			<div class="fixed-sidebar mobile-sidebar ">
 				<h1 class="disburse" onclick="window.location.href='../index.html'">Disburse.</h1>
 				<div class=" sidebar-content">
-					<p class="sidebar name  " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
+					<p class="sidebar name active " data-number="1"><i class="fas fa-user  side-icon"></i>NAME</p>
 					<p class="sidebar dashboard" data-number="2"><i class="fas fa-chart-bar side-icon"></i>Dashboard</p>
-					<p class="sidebar  add-customer active  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
+					<p class="sidebar  add-customer  "  data-number="3"><i class="fas fa-plus side-icon"></i>Add Customer</p>
 					<p class="sidebar  wallet "  data-number="4"><i class="fas fa-money-bill side-icon"></i>Wallet</p>
 					<!-- <p class="sidebar wallet">CONTACT US</p> -->
 				</div> 
@@ -48,39 +48,83 @@
           <div class="loading"></div>
         </div>
 				<div class="display" data-number="1">
-            <h2>Name details</h2>
+          <div class="first-div">
+            <div class="profile-div">
+              <div class="heading">
+                <h3>Profile</h3>
+              </div>
+              <hr/>
+              <div class="flex-div">
+                <div class="left-div">
+                  <div class="avater">
+                    <img alt="avatar" src="">
+                    <p class="edit-icon">icon</p>
+                  </div>
+                  <div class="email">
+                    <p class="title">Email</p>
+                    <p class="body">hilghsilk2damson@gmail.com</p>
+                  </div>
+                  <div class="edit-button">
+                    <button>Edit profile</button>
+                  </div>
+                </div>
+                <div class="right-div">
+                  <div class="Full-name">
+                    <p class="title">Full name</p>
+                    <p class="body">Oluka Damilola Isaac</p>
+                  </div>
+                  <div class="phone-number">
+                    <div class="button">
+                      <button>Add phone-number</button>
+                    </div>
+                    <div class="input">
+                      <input type="number" placeholder="Phone-number..">
+                      <button>Update</button>
+                    </div>
+                    <div class="number">
+                      <p>08129366772</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div> 
+          </div>  
 				</div>
 				<div class="display" data-number="2">
-					<div class="dashboard-div">
-            <div class="div-1 flex-div">
-              <div class="account-Number balance-box">
-                <p class="heading">Account-Number</p>
-								<!-- <p class="amount">2388495663</p> -->
-								<p class="amount initial">_ _ _ _ _ _ _ _ </p>
-								
+          <div class="firs-div">
+            <div class="dashboard-div">
+              <div class="div-1 flex-div">
+                <div class="account-Number balance-box">
+                  <p class="heading">Account-Number</p>
+                  <!-- <p class="amount">2388495663</p> -->
+                  <p class="amount initial">_ _ _ _ _ _ _ _ </p>
+                  
+                </div>
+                <div class="balance-dashboard balance-box">
+                  <p class="heading">Bank-balance</p>
+                  <!-- <p class="amount">#2000</p> -->
+                  <p class="amount initial">_ _ _ _ _ _ _ _ _ </p>
+                </div>
+                <div class="wallet-dashboard balance-box">
+                  <p class="heading">Wallet balance</p>
+                  <!-- <p class="amount">#600</p> -->
+                  <p class="amount initial">_ _ _ _ _ _ _ _ _ </p>
+                </div>
               </div>
-              <div class="balance-dashboard balance-box">
-                <p class="heading">Bank-balance</p>
-								<!-- <p class="amount">#2000</p> -->
-								<p class="amount initial">_ _ _ _ _ _ _ _ _ </p>
+              <div class="div-2">
+                <p><span class="heading">Bank:</span><span class="detail bank"> polaris bank</span><span> -----------------------</span></p>
+                <p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i class="far fa-copy"> copy</i></p> 
+                <!-- <p class="copy-success" >COPIED!</p> -->
               </div>
-              <div class="wallet-dashboard balance-box">
-                <p class="heading">Wallet balance</p>
-								<!-- <p class="amount">#600</p> -->
-								<p class="amount initial">_ _ _ _ _ _ _ _ _ </p>
+              <div class="div-3">
+                <div class="transaction-div">
+                  <!-- Transaction table content -->
+                </div>
               </div>
-						</div>
-						<div class="div-2">
-							<p><span class="heading">Bank:</span><span class="detail bank"> polaris bank</span><span> -----------------------</span></p>
-							<p><span class="heading">Phone Number</span><br><br><span class="detail" id="number"> 08067883093</span> <i class="far fa-copy"> copy</i></p> 
-							<!-- <p class="copy-success" >COPIED!</p> -->
-						</div>
-						<div class="div-3">
-							<div class="transaction-div">
-                <!-- Transaction table content -->
-							</div>
-						</div>
-					</div>
+            </div>
+          </div>
+					
 				</div>
 				<div class="display" data-number="3">
 					<div class="add-flex" >

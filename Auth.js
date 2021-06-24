@@ -17,3 +17,7 @@ var firebaseConfig = {
 
  //update firestore settings 
   db.settings({ timestampsInSnapshots: true});
+
+
+
+  /// update/manage users progile form the firebase DOCS (Sample > web > Manage Users)
