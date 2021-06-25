@@ -1,0 +1,101 @@
+.add-flex{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.Add-new{
+  margin-top: 80px;
+}
+
+.Add-new h1{
+  color: rgb(60, 139, 139);
+}
+
+.Add-new p {
+  font-size: 18px;
+}
+
+ .customer-image{
+	width: 15rem;
+	margin-top: 40px;   
+}
+
+@media(max-width:800px) {
+	.customer-image{
+		display: none;
+	}
+	
+}
+
+.form{
+	margin: 20px;
+	padding: 7px;
+	width: 250px;
+	border-radius: 3px;
+	border: 1px solid   rgb(60, 139, 139);
+}
+.select{
+	width: 260px;
+	margin: 20px;
+	border-radius: 3px;
+	border: 1px solid  rgb(54, 136, 136);
+	padding: 7px;
+	background-color: rgb(236, 231, 231);
+}
+#Add-row{
+	margin: 15px;
+	padding:  10px;
+	color: rgb(49, 155, 155); 
+	background-color: white; 
+	border: 1px solid rgb(39, 163, 163); 
+	font-weight: bolder;
+	width: 35%;
+}
+
+#Add-row:hover{
+	background-color: rgb(94, 95, 95);
+	color: white;
+}
+
+#Add-intern{
+	margin: 20px;
+	padding:  10px; 
+	background-color: rgb(51, 129, 129); 
+	color: white; 
+	border: 0px;
+	width: 30%;
+	cursor: pointer;
+}
+
+@media(min-width: 1200px){
+	.content{
+		margin-left: 100px;
+	}
+	.form{
+		padding: 10px;
+		width: 310px;
+		border-radius: 4px;
+	}
+	.select{
+		width: 330px;
+		border-radius: 4px;
+		padding: 10px;
+	}
+	#Add-row{
+		margin: 18px;
+		padding:  10px;
+		width: 35%;
+	}
+	#Add-intern{
+		margin: 22px;
+		padding:  10px; 
+		width: 35%;
+		cursor: pointer;
+	}
+	.customer-image{
+		width: 22rem;
+		margin-top: 40px;  
+	}
+
+}

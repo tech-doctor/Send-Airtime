@@ -5,7 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEND AIRTIME</title>
 		<link rel="stylesheet" href="Add.css">
-		<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="./Modules/styles/Profile.css">
+    <link rel="stylesheet" href="./Modules/styles/Dashboard.css">
+    <link rel="stylesheet" href="./Modules/styles/Wallet.css">
+    <link rel="stylesheet" href="./Modules/styles/Add-customer.css">
+ 		<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
 	</head>
 	<body>
 		<div class="navigation">
@@ -52,6 +56,7 @@
           <div class="first-div">
             <div class="profile-div">
               <div class="heading">
+                <span>Hi, OLUKA</span>
                 <h3>Profile</h3>
               </div>
               <hr/>
@@ -67,30 +72,53 @@
                       </label>
                     </div> 
                   </div>
-                  <div class="edit-button">
+                  <div class="editPicture-button">
                     <button>Edit picture</button>
                   </div>
+                  <div class="updated-profile">
+                    <div class="bio">
+                      <p style="font-weight: 700;" class="title">Bio</p>
+                      <p class="bio-initial">-------------------------------------</p>
+                      <p class="body">I'm Oluka Damilola isaac, a front-end engineer located in Benin city</p>
+                    </div>
+                 </div>
                   <div class="email">
-                    <p class="title">Email</p>
+                    <p style="font-weight: 700;" class="title">Email</p>
                     <p class="body">hilghsilk2damson@gmail.com</p>
                   </div> 
                 </div>
                 <div class="right-div">
                   <div class="Full-name">
-                    <p class="title">Full name</p>
+                    <p style="font-weight: 700;" class="title">Full name</p>
                     <p class="body">Oluka Damilola Isaac</p>
                   </div>
+                  <div class="updated-profile">
+                     <div class="company">
+                       <p  style="font-weight: 700;"  class="title">Company name</p>
+                       <p class="company-initial">-------------------------------------</p>
+                       <p class="body">Wallet africa.plc</p>
+                     </div>
+                     <div class="location">
+                       <p style="font-weight: 700;" class="title">Location</p>
+                       <p class="location-initial">-------------------------------------</p>
+                       <p class="body">Lagos, Nigeria</p>
+                     </div>
+                  </div>
                   <div class="phone-number">
-                    <div class="button">
+                    <!-- <div style="text-align: center;" class="button">
                       <button>Add phone-number</button>
+                    </div> -->
+                    <div class="update-input">
+                      <div class="input">
+                        <input type="number" placeholder="Phone-number..">
+                        <button>Update</button>
+                      </div>
                     </div>
-                    <div class="input">
-                      <input type="number" placeholder="Phone-number..">
-                      <button>Update</button>
-                    </div>
-                    <div class="number">
-                      <p>08129366772</p>
-                    </div>
+                      <div class="number">
+                        <p style="font-weight: 700;"  class = title>Phone Number</p>
+                        <p class="body">08129366772</p>
+                      </div>
+                    
                   </div>
                 </div>
               </div>
@@ -101,12 +129,12 @@
                 <div class="update-form">
                   <form>
                     <label for="fBio">Bio</label>
-                    <textarea id="fBio" rows="5" cols="50"></textarea><br>
+                    <textarea style="border-radius: 5px;" id="fBio" rows="5" cols="50"required></textarea ><br>
                     <label for="fCompany">Company name</label>
-                    <input id="fCompany" type="text"><br>
+                    <input id="fCompany" type="text" required><br>
                     <label for="fLocation">Location</label>
-                    <input id="fLocation" type="text"><br>
-                    <button type="submit">Update</button>
+                    <input id="fLocation" type="text" required><br>
+                    <button type="submit">Submit</button>
                   </form>
                 </div>
               </div>

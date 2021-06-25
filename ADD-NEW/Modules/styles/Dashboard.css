@@ -1,0 +1,216 @@
+.dashboard-div{
+	padding-top: 100px;
+	background-color: rgb(241, 241, 241);
+	/* height: 100%; */
+	
+}
+.dashboard-div .div-1{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-left: 100px;
+	/* margin: auto; */
+}
+.dashboard-div .div-1 .balance-box{
+	/* border: 1px solid black; */
+	background-color: white;
+	width: 20%;
+	padding: 0.5em 0em 0.5em 0.7em;
+	box-shadow: 1px 1px 3px 0px;
+	border-radius: 4px;
+
+}
+.dashboard-div .div-1 .balance-box .heading{
+	font-size: 18px;
+	/* color: rgb(60, 139, 139); */
+}
+
+.dashboard-div .div-1 .balance-box .amount{
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+}
+.dashboard-div .div-1 .balance-box .initial{
+	font-weight: 400;
+	text-align: center;
+}
+
+.dashboard-div .div-2{
+	border: 2px dashed rgb(60, 139, 139);
+	border-radius: 5px;
+	padding: 1em;
+	width: 40%;
+	margin: 100px auto;
+	text-align: center;
+}
+.dashboard-div .div-2  .heading{
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.dashboard-div .div-2  .detail{
+	font-size: 18px;
+}
+.dashboard-div .div-2  .number{
+	margin-top: 200px;
+}
+
+.fa-copy{
+	background-color: rgb(190, 241, 241);
+	color: teal;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.2em 0.5em;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.fa-copy:active{
+	transform: scale(1.1);
+}
+
+/* .dashboard-div .div-2 .copy-success{
+	background-color: rgb(29, 29, 29);
+	color: white;
+	padding: 0.5em;
+	position: fixed;
+	text-align: center;
+	width: 50%;
+	z-index: 1;
+	top: 70px;
+} */
+
+.dashboard-div .div-3{
+	margin-top: 100px;
+	width: 80%;
+	margin-left: 280px;
+	padding-bottom: 50px;
+}
+.dashboard-div .div-3 .transaction-initial{
+   text-align: center;
+   background-color: rgb(231, 231, 231);
+   height: 10vh;
+   padding: 10%;
+}
+
+
+.transaction-button{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0em 0.5em;
+}
+.transaction-button button{
+	font-size: 18px;
+	padding: 0.4em 0.7em;
+	cursor: pointer;
+	color: white;
+	background-color: rgb(46, 46, 46);
+	border: 1px solid rgb(145, 145, 145);
+	border-radius: 4px;
+}
+.transaction-button button:hover{
+	background-color: rgb(70, 70, 70);
+	color: white;
+	border: 1px solid rgb(145, 145, 145);
+	border-radius: 4px;
+}
+
+.transaction-button h3{
+	font-size: 30px;
+	
+}
+
+.table{
+    padding: 20px;
+	text-align: center;	
+}
+
+#t01 th{
+    background-color:  rgb(43, 126, 126);
+	color: white;
+	padding: 1em;
+}
+
+#t01 tr {
+    border-top: 1px solid rgb(150, 141, 141);
+    border-bottom: 1px solid rgb(150, 141, 141);
+    border-radius: 15px;
+}
+
+
+table, th, td{
+	border-collapse: collapse;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
+}
+
+table tbody tr:nth-child(odd){
+	/* background-color: white; */
+	/* box-shadow: 1px 0px 3px 0px; */
+}
+
+table tbody tr:nth-child(even){
+	background-color: rgb(255, 255, 255);
+	/* box-shadow: 1px 0px 3px 0px; */
+}
+
+/* th,td{
+    
+} */
+
+
+@media(max-width:1200px){
+	.dashboard-div .div-1{
+		margin-left: 0;
+	}
+	.dashboard-div .div-2{
+		margin-left:130px;
+		width: 70%;
+	}
+	.dashboard-div .div-3{
+		margin-left: 100px;
+	}
+	table, th, td{
+		font-size: 15px;
+	}
+}
+
+
+
+@media(max-width:800px){
+	.dashboard-div .div-1 .balance-box{
+		width: 80%;
+		margin-top: 30px;
+	}
+
+	.dashboard-div .div-2{
+		margin-left: 100px;
+		width: 70%;
+	}
+
+	.dashboard-div .div-3{
+		width: 100%;
+		margin-left: 0px;
+		/* overflow-x: scroll; */
+	}
+	 .dashboard-div .div-3 .transaction-div .transaction-table{
+		 /* margin-left: 100px; */
+		overflow-x: scroll;
+	} 
+	.transaction-button button{
+		font-size: 15px;
+	}
+	.transaction-button h3{
+		font-size: 25px;
+	}
+	
+}
+
+@media(max-width:700px){
+	.dashboard-div .div-2{
+		margin-left: 45px;
+	}
+
+}
