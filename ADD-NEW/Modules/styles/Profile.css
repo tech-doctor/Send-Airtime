@@ -99,11 +99,17 @@
   .displaySection > .display > .first-div .profile-div  .phone-number .update-input {
       margin-top: 10px;
    }
+
+   .displaySection > .display > .first-div .profile-div  .phone-number .number{
+       display: none;
+   }
+
   .displaySection > .display > .first-div .profile-div  .phone-number .update-input .input input {
      padding: 0.4em ;
      width: 80%;
      border: 1px solid rgb(141, 141, 141);
      border-radius: 4px;
+     outline: none;
      -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
      -ms-border-radius: 4px;
@@ -184,7 +190,7 @@
       }
   }
   
-  @media(max-width:800px){
+  @media(max-width:750px){
       .displaySection > .display > .first-div .profile-div .update-profile {
           width: 100%;
       }
@@ -206,17 +212,30 @@
     } 	
   }
   
+  @media(max-width: 550px){
+      .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
+          top: 62%;
+          left: 66%;
+      }
+  }
+
   @media(max-width: 450px){
+    .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
+        top: 62%;
+        left: 74%;
+    }
+}
+  
+  @media(max-width: 360px){
       .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
           top: 62%;
-          left: 74%;
+          left: 78%;
       }
   }
   
-  @media(max-width: 350px){
-      .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
-          top: 62%;
-          left: 80%;
-      }
-  }
-  
+  @media(max-width: 300px){
+    .displaySection > .display > .first-div .profile-div .flex-div .left-div .avatar .edit-icon {
+        top: 62%;
+        left: 85%;
+    }
+}

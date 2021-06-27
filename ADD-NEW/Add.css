@@ -108,9 +108,9 @@ li button{
 
 }
 
-.display:not(:nth-child(1)){
+/* .display:not(:nth-child(1)){
 	display: none;
-}
+} */
 
  /* .display:not(:last-child){
 	display: none
