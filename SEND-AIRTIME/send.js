@@ -34,13 +34,28 @@ const customerInfo = [
 
 
 
+const myFunction = ()  => {
+  const  inputNumber =  document.querySelectorAll('#input-amount')
+  
+  const arrayNumber = [2,5,6]
+  
+  customerInfo.forEach ((data,i) => {
+    data.amount  = inputNumber[i].value
+    console.log(data)
+  })
+
+}
+
+
+
+
 
 
 
 //const  Table = () => {
 const customerArray = customerInfo.map((customer,i) => {
   const {id, name, stack, phoneNumber, network,amount,deleteIcon} = customer
-
+  
   return  `
 <tr>
 <td>${id}</td>

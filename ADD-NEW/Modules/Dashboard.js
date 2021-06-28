@@ -16,7 +16,7 @@ const copyFunction = () => {
   })
  }
 
- const transactionData = () => {
+const  transactionData = async () => {
   const data = {
     "skip": 0,
     "take": 5,
@@ -34,75 +34,96 @@ const copyFunction = () => {
     const headers = {
     'Content-Type' : 'application/json',
     'Authorization': `Bearer ${publicKey}`
-    }
-    fetch(proxy + url, {
-      method: "POST",
-      headers: headers,
-      body : JSON.stringify(data),
-      redirect:"follow" 
-    })
-    .then(result => result.json())
-    .then((resp) => {
-      return resp
-    })
-    .catch(err => console.log('Error : ',err))
- }
+  }
+      
+  const response =  await fetch(proxy + url, {
+    method: "POST",
+    headers: headers,
+    body : JSON.stringify(data),
+    redirect:"follow" 
+  })
+  const fetchedData = await response.json()
+  return fetchedData
+}
+ 
 
- transactionData()
+ //transactionData()
 
  const transactionTable = () => {
-   transactionData()
-  console.log(resp)
-  console.log('hello')
-  const result = `
-    <div class="transaction-initial">
-     <p>No Transactions Yet!</p>
-    </div>
-    <div class="transaction-table">
-    <div class="transaction-button">
-      <h3>Transaction</h3>
-      <button>View all</button>
-    </div>
+   //keeping the state when the wallet is created 
+   let createWallet = true
+  const  result1 = `
+  ${!createWallet? `<div class="transaction-initial">
+  <p>No Transactions Yet!</p>
+ </div>`: '' }
+  <div class="transaction-table">
+  <div class="transaction-button">
+    <h3>Transaction</h3>
+    <button>View all</button>
+  </div>
+  <div>
       <table cellspacing="35px" style="width:100%" id="t01">
-        <thead>
-          <th>S/N</th>
-          <th>Currency</th>
-          <th>Amount</th>
-          <th >Category</th>
-          <th >Narration</th>
-          <th>Date</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>
-              <div class="basic-info">
-                <p>NGN</p>
-              </div>
-            </td>
-            <td>25</td>
-            <td id="categorate">Bank Transfer Charges</td>
-            <td id="narrate">
-                Transaction Charge for Bank Transfer
-            </td>
-            <td>
-                Date
-            </td>
-          </tr>
-        </tbody>
-      </table> 
-    </div>`
+      <thead>
+        <th>S/N</th>
+        <th>Currency</th>
+        <th>Amount</th>
+        <th >Category</th>
+        <th >Narration</th>
+        <th>Date</th>
+      </thead>
+      <tbody class = 'table-body'>
+    
+      </tbody> 
+    </table> 
+  </div>
+  
+  </div>`
 
-    return result
+  // <div class="spinner-overlay">
+  // <div class="spinner"></div>
+  // </div>
+  transactionContent.innerHTML += result1
+   transactionData()
+   .then(fetchedData => {
+     const data = fetchedData.Data.Transactions
+    data.forEach((data,i) => {
+      const {Amount, Currency, Category, Narration, DateTransacted} = data;
+       const result2 = `
+      <tr>
+          <td>${i+1}</td>
+          <td>
+            <div class="basic-info">
+              <p>${Currency}</p>
+            </div>
+          </td>
+          <td>${Amount}</td>
+          <td id="categorate">${Category}</td>
+          <td id="narrate">
+          ${Narration}
+          </td>
+          <td>
+          ${DateTransacted}
+          </td>
+        </tr>
+      `
+      document.querySelector('.table-body').innerHTML += result2  
+    })
+   })
+   
+  
+
+    
+
   }
 
   
-
-
 const Dashboard = () => {
-   console.log('dashboard')
+  // console.log('dashboard')
   copyFunction()
-  transactionContent.innerHTML += transactionTable()
+  transactionTable()
   }
 
 export default Dashboard
+
+
+

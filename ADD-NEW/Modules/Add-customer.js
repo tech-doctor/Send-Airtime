@@ -95,15 +95,16 @@ const addCustomer = () =>{
   /////Send Data to Airtime API
 
   // function postAirtimeData(){
-    // const data = {
-    //   "Code": "airtel",
-    //   "Amount": 100,
-    //   "PhoneNumber": "07068260000",
-    //   "SecretKey": "hfucj5jatq8h"
-    // }
-   
+    // const data1 =
+    //   {
+    //     "Code": "airtel",
+    //     "Amount": 50,
+    //     "PhoneNumber": "07068260000",
+    //     "SecretKey": "hfucj5jatq8h"
+    //   }
+
   
-  
+
    
     // const url = "https://sandbox.wallets.africa/bills/airtime/purchase"
     // const publicKey = "uvjqzm5xl6bw";
@@ -116,10 +117,10 @@ const addCustomer = () =>{
     // fetch(proxy +  url, {
     //   method: "POST",
     //   headers: headers,
-    //   body : JSON.stringify(data),
+    //   body : JSON.stringify(data1, data2),
     // })
   
-  
+
     // .then(result => result.json())
     // .then(resp => console.log(resp))
     // .catch(err => console.log('Error :', err))
