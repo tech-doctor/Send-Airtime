@@ -22,9 +22,7 @@ const addCustomer = () =>{
       </select>
       <br>
     </div>`
-   // let resultList = []
-  //   return result;
-  // }
+   
 
   newForm.innerHTML = result
  

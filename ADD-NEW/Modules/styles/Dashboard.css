@@ -10,7 +10,7 @@
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	width: 100%;
-	margin-left: 100px;
+	margin-left: 70px;
 	/* margin: auto; */
 }
 .dashboard-div .div-1 .balance-box{
@@ -83,7 +83,7 @@
 .dashboard-div .div-3{
 	margin-top: 100px;
 	width: 80%;
-	margin-left: 280px;
+	margin-left: 250px;
 	padding-bottom: 50px;
 }
 .dashboard-div .div-3 .transaction-initial{
@@ -195,7 +195,7 @@ table tbody tr:nth-child(even){
 		margin-left: 0px;
 		/* overflow-x: scroll; */
 	}
-	 .dashboard-div .div-3 .transaction-div .transaction-table{
+	 .dashboard-div .div-3 .transaction-div .transaction-table .table{
 		 /* margin-left: 100px; */
 		overflow-x: scroll;
 	} 

@@ -2,47 +2,21 @@ const Wallet = () =>{
    
  const mainView = document.querySelector('.main-view')
 
-// const tryFunction = (PhoneNumber) =>{
-//   db.collection('create').get().then((snapshot) => {
-//     snapshot.forEach(doc => {
-//       const {PhoneNumber} = doc.data()
-//      console.log(PhoneNumber)
-//     })   
-// })
-
 // }
 // const getNumber =  () => {
-  db.collection('create').get().then((snapshot) => {
-    
-    snapshot.forEach(doc => {
-      const PhoneNumber = doc.data().PhoneNumber;
-       updateWallet(PhoneNumber)
-    })  
+//   db.collection('create').get().then((snapshot) => {
+//     snapshot.forEach(doc => {
+//       const PhoneNumber = doc.data().PhoneNumber;
+//        updateWallet(PhoneNumber)
+//     })  
   
-})
+// })
   
 //}
+console.log(db)
 
-
-
-  
-
-  const  updateWallet = (PhoneNumber) => {
-   // getNumber() 
-  // getNumber()
-  // console.log(PhoneNumber)
-
-  //setTimeout  (() => {
-    // if(PhoneNumber){
-    //   console.log(PhoneNumber)
-    // }
-      PhoneNumber? console.log(PhoneNumber): ''
-      // if(PhoneNumber){
-      //   const  num =  56
-      // } else{
-      //   const  num = ''
-      // }
-   
+////////////////////////////wallet page content////////////////
+  const  updateWallet = () => {
     const result = `
     <div class="flex-view">
       <div class="wallet-btn-div">
@@ -72,19 +46,17 @@ const Wallet = () =>{
       <p class="phone-number"> Phone-number: <span id="wallet-number"> ${12} </span><i class="far fa-copy"> copy</i></p>
       </div> `  
     return result;
-  
   }
-
  mainView.innerHTML += updateWallet()
 
 
-  const createWalletButon = document.querySelector('.button-div .create');
+  const createWalletButton = document.querySelector('.button-div .create');
   const fundWalletButton = document.querySelector('.button-div .fund');
   const modal = document.querySelectorAll('.modal');
   const closeModal = document.querySelectorAll('.close')
 
   /////////////////////////////////////////////////////////////open create wallet modal/////////////////////////////////////////////////
-  createWalletButon.addEventListener( 'click', (event) =>{
+  createWalletButton.addEventListener( 'click', (event) =>{
   modal[1].style.display = 'block'
   })
 
@@ -112,7 +84,6 @@ const Wallet = () =>{
   copyIcon.addEventListener ('click', (e) => {
     e.preventDefault()
     const  copyText = document.querySelector("#wallet-number");
-
     let aux = document.createElement('input');
     aux.setAttribute('Value',copyText.innerHTML);
     document.body.appendChild(aux);
@@ -135,33 +106,38 @@ const Wallet = () =>{
     let DOB = generateForm['DOB'].value;
     return {
       firstName, lastName, email, DOB
-    }      
+    }   
+     
   }
+
 ////////////////////////////////////////////////////////////send created wallet data to firebase //////////////////////////////////////////
-const sendCreateWallet = (AccountNo, PhoneNumber, Bank) => {
-  db.collection('create').add({
-    AccountNo: AccountNo,
-    Bank: Bank,
-    PhoneNumber: PhoneNumber
-  }).then(()=> {
-    loadingOverlay.style.display = 'none' 
-  })
-  
-}
+
+// const sendCreateWallet = (AccountNo, PhoneNumber, Bank) => {
+//   db.collection('create').add({
+//     AccountNo: AccountNo,
+//     Bank: Bank,
+//     PhoneNumber: PhoneNumber
+//   }).then(()=> {
+//     loadingOverlay.style.display = 'none' 
+//   }) 
+// }
+
 ////////////////////////////////////////////////////////Send create wallet data  //////////////////////////////////////////////
 const loadingOverlay  = document.querySelector('.loading-overlay')
 const walletSuccess = document.querySelector('.wallet-success')
+
   function postCreatewalletData(){
     createFieldValue()
     console.log(firstName.value)
-  const data = {
-    firstName : firstName.value,
-    lastName: lastName.value,
-    email: email.value,
-    dateOfBirth: DOB.value,
-    currency: "NGN",
-    SecretKey: "hfucj5jatq8h",
-  }
+
+    const data = {
+      firstName : firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      dateOfBirth: DOB.value,
+      currency: "NGN",
+      SecretKey: "hfucj5jatq8h",
+    }
    const url = "https://sandbox.wallets.africa/wallet/generate";
   //const url = "https://sandbox.wallets.africa/self/balance";
     const publicKey = "uvjqzm5xl6bw";
@@ -183,11 +159,11 @@ const walletSuccess = document.querySelector('.wallet-success')
       console.log(resp)
       const {Message, ResponseCode} = resp.Response;
       const {AccountNo, PhoneNumber, Bank} = resp.Data;
-      bankBalance()
-      sendCreateWallet(AccountNo, PhoneNumber, Bank)
+      //bankBalance()
+      //sendCreateWallet(AccountNo, PhoneNumber, Bank)
 
-      
       if(ResponseCode == 200){
+        loadingOverlay.style.display = 'none'
         walletSuccess.innerHTML = `<p>${Message}</p>`
         walletSuccess.style.display = 'block'
         timeOut()
@@ -217,41 +193,41 @@ const walletSuccess = document.querySelector('.wallet-success')
 
   ///////////////////////////////////////////////Bank balance POST request//////////////////////////////////////////
 
-  const bankBalance = () => {
-    const data = {
-      "Currency": "NGN",
-	     "SecretKey": "hfucj5jatq8h"
-    }
+  // const bankBalance = () => {
+  //   const data = {
+  //     "Currency": "NGN",
+	//      "SecretKey": "hfucj5jatq8h"
+  //   }
 
-      const url = "https://sandbox.wallets.africa/self/balance";
-      const publicKey = "uvjqzm5xl6bw";
-      const proxy = "https://mighty-island-92084.herokuapp.com/"
-      const headers = {
-      'Content-Type' : 'application/json',
-      'Authorization': `Bearer ${publicKey}`
-      }
+  //     const url = "https://sandbox.wallets.africa/self/balance";
+  //     const publicKey = "uvjqzm5xl6bw";
+  //     const proxy = "https://mighty-island-92084.herokuapp.com/"
+  //     const headers = {
+  //     'Content-Type' : 'application/json',
+  //     'Authorization': `Bearer ${publicKey}`
+  //     }
       
-      fetch(proxy + url, {
-        method: "POST",
-        headers: headers,
-        body : JSON.stringify(data),
-        redirect:"follow" 
-      })
-      .then(result => result.json())
-      .then(resp => {
-        console.log(resp)
-        db.collection('balance').add({
-          BankBalance: resp.Data.WalletBalance
-        }).then(()=> {
-          loadingOverlay.style.display = 'none' 
-        })
+  //     fetch(proxy + url, {
+  //       method: "POST",
+  //       headers: headers,
+  //       body : JSON.stringify(data),
+  //       redirect:"follow" 
+  //     })
+  //     .then(result => result.json())
+  //     .then(resp => {
+  //       console.log(resp)
+  //       db.collection('balance').add({
+  //         BankBalance: resp.Data.WalletBalance
+  //       }).then(()=> {
+  //         loadingOverlay.style.display = 'none' 
+  //       })
         
-      })
-      .catch(err => {
-         console.log(err)
+  //     })
+  //     .catch(err => {
+  //        console.log(err)
         
-      })  
-  }
+  //     })  
+  // }
 
   
 

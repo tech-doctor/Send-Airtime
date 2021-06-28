@@ -58,10 +58,10 @@ const  transactionData = async () => {
  </div>`: '' }
   <div class="transaction-table">
   <div class="transaction-button">
-    <h3>Transaction</h3>
+    <h3>Transactions</h3>
     <button>View all</button>
   </div>
-  <div>
+  <div class = 'table'>
       <table cellspacing="35px" style="width:100%" id="t01">
       <thead>
         <th>S/N</th>
