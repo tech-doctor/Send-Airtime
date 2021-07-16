@@ -10,9 +10,10 @@ const Wallet = () =>{
 //        updateWallet(PhoneNumber)
 //     })  
   
-// })
-  
+// })  
 //}
+
+
 console.log(db)
 
 ////////////////////////////wallet page content////////////////
@@ -23,7 +24,7 @@ console.log(db)
         <div class= "wallet-balance">
           <p class="heading">Wallet balance:</p>
           <div class="details">
-            <p class="balance">#700.00</p>
+            <p class="balance">00.00</p>
             <p class = "currency">NGN.</p>
           </div>
         </div>
@@ -38,12 +39,15 @@ console.log(db)
           <i class="fas fa-money-check-alt"></i>
           <br><br>Your  bank balance will be displayed here <br>once you create a wallet
         </p>
+       
+      
+        
         
       </div>
     </div>	
     <div class="message-div">
       <p class="message"> After creating a wallet, a phone number would be generated here. The generated phone number will be required  for  funding your wallet.</p>
-      <p class="phone-number"> Phone-number: <span id="wallet-number"> ${12} </span><i class="far fa-copy"> copy</i></p>
+      <p class="phone-number"> Phone-number: <span id="wallet-number"> +${12} </span><i class="far fa-copy"> copy</i></p>
       </div> `  
     return result;
   }
@@ -157,18 +161,19 @@ const walletSuccess = document.querySelector('.wallet-success')
     .then(result => result.json())
     .then(resp => {
       console.log(resp)
-      const {Message, ResponseCode} = resp.Response;
-      const {AccountNo, PhoneNumber, Bank} = resp.Data;
+      const {message, responseCode} = resp.response;
+      //const {AccountNo, PhoneNumber, Bank} = resp.Data;
       //bankBalance()
       //sendCreateWallet(AccountNo, PhoneNumber, Bank)
 
-      if(ResponseCode == 200){
+      if(responseCode == 200){
         loadingOverlay.style.display = 'none'
-        walletSuccess.innerHTML = `<p>${Message}</p>`
+        walletSuccess.innerHTML = `<p>${message}</p>`
         walletSuccess.style.display = 'block'
         timeOut()
       }else{
-        walletSuccess.innerHTML = `<p>${Message}</p>`
+        loadingOverlay.style.display = 'none'
+        walletSuccess.innerHTML = `<p>${message}</p>`
         walletSuccess.style.backgroundColor = '#C21807'
         walletSuccess.style.display = 'block'
         timeOut()
