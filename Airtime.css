@@ -209,6 +209,7 @@ img{
     font-stretch: extra-expanded ;
 }
 #get-started{
+    font-size: 15px;
     padding: 10px 15px 7px 10px; 
     background-color: rgb(60, 139, 139);
     color: white;
@@ -237,6 +238,21 @@ img{
     border: 1px solid black;
 }
 
+.div-three{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: flex;
+    padding:  1em 0.5em;
+}
+.div-three .each-icon{
+    /* border: 1px solid black; */
+    width: 100%;
+    text-align: center;
+}
+.div-three .icon{
+    text-align:  center;
+}
 
 /* .logged-in{
     display: none;
