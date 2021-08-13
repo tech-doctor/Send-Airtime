@@ -22,4 +22,4 @@ var firebaseConfig = {
 
   /// update/manage users progile form the firebase DOCS (Sample > web > Manage Users)
 
-
+//sign users in with google auth

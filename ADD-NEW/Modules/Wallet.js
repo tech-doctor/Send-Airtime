@@ -39,9 +39,10 @@ console.log(db)
           <i class="fas fa-money-check-alt"></i>
           <br><br>Your  bank balance will be displayed here <br>once you create a wallet
         </p>
-       
-      
-        
+        <div class="details-self">
+        <p class="balance">00.00</p>
+        <p class = "currency">NGN.</p>
+        </div>
         
       </div>
     </div>	
