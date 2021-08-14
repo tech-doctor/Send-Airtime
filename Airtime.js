@@ -3,6 +3,7 @@ const sideMenu = document.querySelector(".side-menu");
 const closeMenu = document.getElementById("close-menu")
 const overlay = document.querySelector('.overlay')
 const form = document.querySelector('.form')
+const copyRight = document.querySelector('.copyright')
 //const navLink = document.querySelectorAll('.nav-content')
 
 menuIcon.addEventListener("click", () =>{
@@ -191,3 +192,12 @@ const data = {
   .then(result => result.json())
   .then(resp => console.log(resp))
   .catch(err => console.log('Error :', err))
+
+
+//   set copyright year automatically
+
+const year = new Date().getFullYear()
+
+
+
+copyRight.innerHTML = `All reserved  ©${year}`
