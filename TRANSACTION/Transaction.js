@@ -12,18 +12,19 @@ const backTryagain = document.querySelector('.back-tryAgain')
 //let loaderDisplay = true;
 
  function transactionData(){
-  
   const requestData = {
     "skip": 0,
     "take": 15,
-    "dateFrom": "2021-01-11",
+    "dateFrom": "2021-01-15",
     "dateTo": new Date(),
     "transactionType": 5,
     "transactionPin": "1",
     "Currency": "NGN",
     "SecretKey": "hfucj5jatq8h"
   }
-  const url = "https://sandbox.wallets.africa/self/transactions";
+
+  //uncomment the code below to debug
+ // const url = "https://sandbox.wallets.africa/self/transactions";
   const publicKey = "uvjqzm5xl6bw";
   const proxy = "https://mighty-island-92084.herokuapp.com/"
   const headers = {
@@ -41,25 +42,27 @@ const backTryagain = document.querySelector('.back-tryAgain')
   .then(result => result.json())
   .then((resp) => {
     backTryagain.innerHTML = `<button onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</button>`
-    const data = resp.Data.Transactions
-    data.forEach((data,i) => {
-      console.log(data, i)
-      const {Currency,Amount, Category, Narration,DateTransacted} = data
+    
+    const responseData = resp.data.transactions 
+    console.log(responseData)
+    responseData.forEach((responseData,i) => {
+      console.log(responseData, i)
+      const {currency,amount, category, narration,dateTransacted} = responseData
       const result = `
         <tr>
           <td>${i+1}</td>
-          <td>${Currency}</td>
-          <td>${Amount}</td>
-          <td>${Category}</td>
-          <td>${Narration}</td>
-          <td>${DateTransacted}</td>
+          <td>${currency}</td>
+          <td>${amount}</td>
+          <td>${category}</td>
+          <td>${narration}</td>
+          <td>${dateTransacted}</td>
         </tr>`
        tableRow.innerHTML += result
        loader.style.display = 'none'
     })
   })
   .catch((err) => {
-    //console.log('Error : ',err)
+    console.log('Error : ',err)
     loader.style.display = 'none'
     backTryagain.innerHTML = `<button onclick="tryAgain()"> Try again</button>`
     table.style.overflowX = 'hidden'

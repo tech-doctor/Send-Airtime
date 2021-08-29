@@ -110,7 +110,8 @@
 	border-radius: 4px;
 }
 .transaction-button button:hover{
-	background-color: rgb(70, 70, 70);
+	background-color: rgb(34, 34, 34);
+	text-decoration: underline;
 	color: white;
 	border: 1px solid rgb(145, 145, 145);
 	border-radius: 4px;
@@ -208,6 +209,7 @@ table tbody tr:nth-child(even){
 	
 }
 
+
 @media(max-width:700px){
 	.dashboard-div .div-2{
 		margin-left: 45px;
@@ -223,7 +225,7 @@ table tbody tr:nth-child(even){
 	width: 100%;
 	height: 50vh;
 	color: rgb(77, 77, 77);
-	/* display: none; */
+	display: none;
 }
 
 .spinner:empty {

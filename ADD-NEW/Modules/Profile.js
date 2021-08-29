@@ -69,6 +69,7 @@ const profileFlexContent = document.querySelector('.display .first-div .profile-
   </div>`
 
   return profileFlexText
+  
  }
   
 

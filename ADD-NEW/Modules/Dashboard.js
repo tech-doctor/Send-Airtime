@@ -28,7 +28,8 @@ const  transactionData = async () => {
     "currency": "NGN",
     "secretKey": "hfucj5jatq8h"
     }
-    const url = "https://sandbox.wallets.africa/self/transactions";
+    //uncomment the code below to debug
+   // const url = "https://sandbox.wallets.africa/self/transactions";
     const publicKey = "uvjqzm5xl6bw";
     const proxy = "https://mighty-island-92084.herokuapp.com/"
     const headers = {
@@ -47,62 +48,66 @@ const  transactionData = async () => {
 }
  
 
- //transactionData()
 
  const transactionTable = () => {
    //keeping the state when the wallet is created 
    let createWallet = true
+
   const  result1 = `
-  ${!createWallet? `<div class="transaction-initial">
-  <p>No Transactions Yet!</p>
- </div>`: '' }
+  ${!createWallet? `
+  <div class="transaction-initial">
+    <p>No Transactions Yet!</p>
+  </div>`: '' }
   <div class="transaction-table">
-  <div class="transaction-button">
-    <h3>Transactions</h3>
-    <button>View all</button>
-  </div>
-  <div class = 'table'>
+    <div class="transaction-button">
+      <h3>Transactions</h3>
+      <button onclick="window.location.href='../TRANSACTION'">Veiw All</button>
+    </div>
+    <div class = 'table'>
       <table cellspacing="35px" style="width:100%" id="t01">
-      <thead>
-        <th>S/N</th>
-        <th>Currency</th>
-        <th>Amount</th>
-        <th >Category</th>
-        <th >Narration</th>
-        <th>Date</th>
-      </thead>
-      <tbody class = 'table-body'>
-    
-      </tbody> 
-    </table> 
-  </div>
-  
+        <thead>
+          <th>S/N</th>
+          <th>Currency</th>
+          <th>Amount</th>
+          <th >Category</th>
+          <th >Narration</th>
+          <th>Date</th>
+        </thead>
+        <tbody class = 'table-body'>
+         
+        </tbody> 
+      </table> 
+
+      <div class="spinner-overlay">
+        <div class="spinner"></div>
+      </div>
+    </div>
   </div>`
 
-  // <div class="spinner-overlay">
-  // <div class="spinner"></div>
-  // </div>
   transactionContent.innerHTML += result1
+  document.querySelector('.spinner-overlay').style.display = "block";
    transactionData()
    .then(fetchedData => {
-     const data = fetchedData.Data.Transactions
+    document.querySelector('.spinner-overlay').style.display = "none"
+     console.log(fetchedData)
+     const data = fetchedData.data.transactions
     data.forEach((data,i) => {
-      const {Amount, Currency, Category, Narration, DateTransacted} = data;
+      const {amount, currency, category, narration, dateTransacted} = data;
        const result2 = `
       <tr>
           <td>${i+1}</td>
           <td>
             <div class="basic-info">
-              <p>${Currency}</p>
+              <p>${currency}</p>
             </div>
           </td>
-          <td>${Amount}</td>
-          <td id="categorate">${Category}</td>
+          <td>${amount}</td>
+          <td id="categorate">${category}</td>
           <td id="narrate">
-          ${Narration}
+          ${narration}
           </td>
           <td>
-          ${DateTransacted}
+          ${dateTransacted}
           </td>
         </tr>
       `
@@ -118,7 +123,6 @@ const  transactionData = async () => {
 
   
 const Dashboard = () => {
-  // console.log('dashboard')
   copyFunction()
   transactionTable()
   }

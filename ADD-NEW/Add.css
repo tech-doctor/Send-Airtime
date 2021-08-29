@@ -112,14 +112,19 @@ li button{
 	display: none;
 } */
 
- .display:not(:last-child){
+ /* .display:not(:last-child){
 	display: none
-  }
+  } */
 
-/*   
-  .display:not(:nth-child(3n+3)){
+  
+  /* .display:not(:nth-child(3n+3)){
 	display: none;
 }  */
+
+.display:not(:nth-child(4n)){
+	display: none;
+} 
+
 
   
   
